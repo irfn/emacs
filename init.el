@@ -4,6 +4,7 @@
 (load-file "~/.emacs.d/packages/distel-init.el")
 (load-file "~/.emacs.d/packages/ecb-init.el")
 (load-file "~/.emacs.d/packages/magit-init.el")
+(load-file "~/.emacs.d/packages/yas-init.el")
 ;;(load-file "~/.emacs.d/packages/twilight-init.el")
 ;;(load-file "~/.emacs.d/packages/zen-init.el")
 ;;(load-file "~/.emacs.d/packages/zenburn-init.el")
