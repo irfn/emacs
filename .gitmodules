@@ -37,3 +37,6 @@
 [submodule "packages/color-theme-tango-2"]
 	path = packages/color-theme-tango-2
 	url = git://github.com/wfarr/color-theme-tango-2.git
+[submodule "packages/color-theme-zenburn"]
+	path = packages/color-theme-zenburn
+	url = git://github.com/credmp/color-theme-zenburn.git
