@@ -19,6 +19,7 @@
 (if (eq system-type 'darwin)
     (setq system-name (car (split-string system-name "\\."))))
 
-(dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin")))
+(dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin" "/usr/local/mysql/bin/")))
 	(setenv "PATH" (concat dir ":" (getenv "PATH")))
 	(setq exec-path (append (list dir) exec-path)))
+(org-mode)
