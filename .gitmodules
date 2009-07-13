@@ -43,6 +43,3 @@
 [submodule "packages/inkpot-mod"]
 	path = packages/inkpot-mod
 	url = git://github.com/andrewellis/inkpot-mod.git
-[submodule "packages/org-mode"]
-	path = packages/org-mode
-	url = git://repo.or.cz/org-mode.git
