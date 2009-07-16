@@ -5,6 +5,7 @@
 (load-file "~/.emacs.d/packages/ecb-init.el")
 (load-file "~/.emacs.d/packages/magit-init.el")
 (load-file "~/.emacs.d/packages/yas-init.el")
+(load-file "~/.emacs.d/packages/rinari-init.el")
 ;;(load-file "~/.emacs.d/packages/twilight-init.el")
 ;;(load-file "~/.emacs.d/packages/zen-init.el")
 ;;(load-file "~/.emacs.d/packages/zenburn-init.el")
@@ -15,6 +16,7 @@
 (require 'uniquify)
 (require 'ansi-color)
 (require 'recentf)
+(require 'ido)
 
 (if (eq system-type 'darwin)
     (setq system-name (car (split-string system-name "\\."))))

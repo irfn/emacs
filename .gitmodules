@@ -43,3 +43,6 @@
 [submodule "packages/inkpot-mod"]
 	path = packages/inkpot-mod
 	url = git://github.com/andrewellis/inkpot-mod.git
+[submodule "packages/rinari"]
+	path = packages/rinari
+	url = git://github.com/technomancy/rinari.git
