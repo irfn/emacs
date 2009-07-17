@@ -46,3 +46,6 @@
 [submodule "packages/rinari"]
 	path = packages/rinari
 	url = git://github.com/technomancy/rinari.git
+[submodule "packages/rspec-mode"]
+	path = packages/rspec-mode
+	url = git://github.com/pezra/rspec-mode.git
