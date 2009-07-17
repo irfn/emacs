@@ -7,9 +7,10 @@
 (load-file "~/.emacs.d/packages/yas-init.el")
 (load-file "~/.emacs.d/packages/rinari-init.el")
 (load-file "~/.emacs.d/packages/rspec-init.el")
+(load-file "~/.emacs.d/packages/textmate-init.el")
 ;;(load-file "~/.emacs.d/packages/twilight-init.el")
 (load-file "~/.emacs.d/packages/zen-init.el")
-;;(load-file "~/.emacs.d/packages/zenburn-init.el")
+;;(load-file "~/.emacs.d/packages/zenburn-init.
 (load-file "~/.emacs.d/packages/inkpot-init.el")
 (require 'cl)
 (require 'saveplace)
@@ -26,3 +27,4 @@
 	(setenv "PATH" (concat dir ":" (getenv "PATH")))
 	(setq exec-path (append (list dir) exec-path)))
 (org-mode)
+(color-theme-zen-and-art)

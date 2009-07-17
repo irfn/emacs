@@ -51,4 +51,4 @@
 	url = git://github.com/pezra/rspec-mode.git
 [submodule "packages/textmate.el"]
 	path = packages/textmate.el
-	url = git://github.com/irfn/textmate.el.git
+	url = git://github.com/defunkt/textmate.el.git
