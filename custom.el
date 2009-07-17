@@ -20,3 +20,4 @@
 (custom-set-variables
  '(linum-format "%4d "))
 (line-number-mode)
+(setq rinari-tags-file-name "eTAGS")

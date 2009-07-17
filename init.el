@@ -9,7 +9,7 @@
 ;;(load-file "~/.emacs.d/packages/twilight-init.el")
 (load-file "~/.emacs.d/packages/zen-init.el")
 ;;(load-file "~/.emacs.d/packages/zenburn-init.el")
-;;(load-file "~/.emacs.d/packages/inkpot-init.el")
+(load-file "~/.emacs.d/packages/inkpot-init.el")
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
