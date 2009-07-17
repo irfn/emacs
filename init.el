@@ -6,6 +6,7 @@
 (load-file "~/.emacs.d/packages/magit-init.el")
 (load-file "~/.emacs.d/packages/yas-init.el")
 (load-file "~/.emacs.d/packages/rinari-init.el")
+(load-file "~/.emacs.d/packages/rspec-init.el")
 ;;(load-file "~/.emacs.d/packages/twilight-init.el")
 (load-file "~/.emacs.d/packages/zen-init.el")
 ;;(load-file "~/.emacs.d/packages/zenburn-init.el")
