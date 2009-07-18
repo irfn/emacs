@@ -16,4 +16,14 @@
   "Color two of zebra-striping of recent tweets and followers list."
   :group 'twit)
 
+(defface twit-author-face
+  '((t
+	  (:height 0.8
+	   :weight bold
+	   :family "mononaco")))
+  "The font face to use for the authors name"
+  :group 'twit)
+
+
 (require 'twit)
+
