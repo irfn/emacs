@@ -32,11 +32,11 @@
   :group 'twit)
 
 (defface twit-info-face
-  '((t (:height 0.6 :slant italic)))
+  '((t (:height 0.7 :slant italic)))
   "Face for displaying where, how and when someone tweeted."
   :group 'twit)
 
 
 (require 'twit)
-
+(twit-minor-mode)
 (setq twit-show-user-images t)

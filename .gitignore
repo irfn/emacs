@@ -2,3 +2,4 @@
 places
 */**/*.elc
 *.elc
+url/*
