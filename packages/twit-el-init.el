@@ -18,12 +18,25 @@
 
 (defface twit-author-face
   '((t
-	  (:height 0.8
+	  (:height 0.7
 	   :weight bold
-	   :family "mononaco")))
+	   :family "monaco")))
   "The font face to use for the authors name"
+  :group 'twit)
+
+(defface twit-message-face
+  '((default
+	  :family "monaco"
+	  :height 0.9))
+  "The font face to use for a twitter message."
+  :group 'twit)
+
+(defface twit-info-face
+  '((t (:height 0.6 :slant italic)))
+  "Face for displaying where, how and when someone tweeted."
   :group 'twit)
 
 
 (require 'twit)
 
+(setq twit-show-user-images t)
