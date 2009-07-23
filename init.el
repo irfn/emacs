@@ -10,6 +10,7 @@
 (load-file "~/.emacs.d/packages/textmate-init.el")
 (load-file "~/.emacs.d/packages/haml-init.el")
 (load-file "~/.emacs.d/packages/twit-el-init.el")
+(load-file "~/.emacs.d/packages/clojure-init.el")
 
 ;;(load-file "~/.emacs.d/packages/twilight-init.el")
 (load-file "~/.emacs.d/packages/zen-init.el")
