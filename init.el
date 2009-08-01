@@ -1,6 +1,11 @@
 (setq load-path (cons "~/.emacs.d" load-path))
 (setq load-path (cons "~/.emacs.d/packages" load-path))
 (load-file "~/.emacs.d/custom.el")
+(if (eq system-type 'darwin)
+    (setq system-name (car (split-string system-name "\\."))))
+(load-file "~/.emacs.d/paths.el")
+
+;; Enable/ Disable by commenting out lines
 (load-file "~/.emacs.d/packages/distel-init.el")
 (load-file "~/.emacs.d/packages/ecb-init.el")
 (load-file "~/.emacs.d/packages/magit-init.el")
@@ -11,11 +16,13 @@
 (load-file "~/.emacs.d/packages/haml-init.el")
 (load-file "~/.emacs.d/packages/twit-el-init.el")
 (load-file "~/.emacs.d/packages/clojure-init.el")
-
-;;(load-file "~/.emacs.d/packages/twilight-init.el")
-(load-file "~/.emacs.d/packages/zen-init.el")
-;;(load-file "~/.emacs.d/packages/zenburn-init.
 (load-file "~/.emacs.d/packages/inkpot-init.el")
+(load-file "~/.emacs.d/packages/zen-init.el")
+;;(load-file "~/.emacs.d/packages/twilight-init.el")
+;;(load-file "~/.emacs.d/packages/zenburn-init.
+
+
+;; Default Loads (These come pre-packaged with Aquamacs)
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
@@ -23,12 +30,5 @@
 (require 'ansi-color)
 (require 'recentf)
 (require 'ido)
-
-(if (eq system-type 'darwin)
-    (setq system-name (car (split-string system-name "\\."))))
-
-(dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin" "/usr/local/mysql/bin/")))
-	(setenv "PATH" (concat dir ":" (getenv "PATH")))
-	(setq exec-path (append (list dir) exec-path)))
 (org-mode)
 (color-theme-zen-and-art)

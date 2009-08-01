@@ -1,5 +1,5 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) Need this on osx
 
 
 (setq make-backup-files nil)
@@ -20,7 +20,7 @@
 (custom-set-variables
  '(linum-format "%4d "))
 (line-number-mode)
-(setq rinari-tags-file-name "eTAGS")
+(setq rinari-tags-file-name "TAGS")
 
 (autoload 'mode-compile "mode-compile"
    "Command to compile current buffer file based on the major mode" t)
@@ -29,3 +29,10 @@
 (autoload 'mode-compile-kill "mode-compile"
  "Command to kill a compilation launched by `mode-compile'" t)
 (global-set-key "\C-ck" 'mode-compile-kill)
+
+(defun ruby-outline-mode ()
+  (interactive)
+  (setq outline-regexp " *\\(def\\|if\\|when\\|do\\)"))
+
+(setq textmate-gf-exclude 
+  "/\\.|vendor|fixtures|tmp|log|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc|\\.elc|\\.jar")
