@@ -1,13 +1,12 @@
 
-This emacs configuration assumes that you are using Aquamacs. Aquamacs comes preinstalled with most emacs addons hence lesser pain of configuration
-
-SLIME for LISP has a seperate installer and can be installed from http://braeburn.aquamacs.org/plugins/Aquamacs-SLIME-2009-07-23.pkg.tgz
-
 
 irfn@firefly ~/dev/elisp >git clone git://github.com/irfn/emacs.git
 irfn@firefly ~ >ln -s dev/elisp/emacs .emacs.d
+
+# For Aquamacs
 irfn@firefly ~ >cat  ~/Library/Preferences/Aquamacs\ Emacs/Preferences.el
 (load-file "~/.emacs.d/init.el")
+
 
 irfn@firefly ~ >cd .emacs.d
 irfn@firefly ~/.emacs.d >./update
@@ -28,4 +27,5 @@ sudo gem install haml
 create following in your home folder.
 create a .snippets directory - mine is symlinked to a folder where i collect snippets
 github has a bunch of repositories for yasnippets.
+
 create a .clojure directory  with a blank user.clj files
