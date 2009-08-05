@@ -20,6 +20,8 @@
 (custom-set-variables
  '(linum-format "%4d "))
 (line-number-mode)
+(global-linum-mode 1)
+
 (setq rinari-tags-file-name "TAGS")
 
 (autoload 'mode-compile "mode-compile"
@@ -36,3 +38,4 @@
 
 (setq textmate-gf-exclude 
   "/\\.|vendor|fixtures|tmp|log|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc|\\.elc|\\.jar")
+(setq auto-mode-alist (cons '("Rakefile$" . ruby-mode) auto-mode-alist))
