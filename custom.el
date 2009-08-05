@@ -1,6 +1,6 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 ;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) Need this on osx
-
+(setq inhibit-splash-screen t)
 
 (setq make-backup-files nil)
 (custom-set-variables
@@ -39,3 +39,6 @@
 (setq textmate-gf-exclude 
   "/\\.|vendor|fixtures|tmp|log|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc|\\.elc|\\.jar")
 (setq auto-mode-alist (cons '("Rakefile$" . ruby-mode) auto-mode-alist))
+
+(global-set-key (kbd "A-d") "\C-a\C- \C-n\M-w\C-y")
+(global-set-key (kbd "A-D") "\M-w\C-y")

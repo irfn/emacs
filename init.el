@@ -16,10 +16,11 @@
 (load-file "~/.emacs.d/packages/haml-init.el")
 (load-file "~/.emacs.d/packages/twit-el-init.el")
 (load-file "~/.emacs.d/packages/clojure-init.el")
+(load-file "~/.emacs.d/packages/color-theme-init.el")
 (load-file "~/.emacs.d/packages/inkpot-init.el")
 (load-file "~/.emacs.d/packages/zen-init.el")
 ;;(load-file "~/.emacs.d/packages/twilight-init.el")
-;;(load-file "~/.emacs.d/packages/zenburn-init.
+;;(load-file "~/.emacs.d/packages/zenburn-init")
 
 
 ;; Default Loads (These come pre-packaged with Aquamacs)
