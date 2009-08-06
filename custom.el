@@ -23,6 +23,13 @@
 (global-linum-mode 1)
 
 (setq rinari-tags-file-name "TAGS")
+(setq my-global-projects-dirs (quote (
+"~/dev/elisp"
+"~/dev/ruby/ror"
+"~/dev/clojure"
+"~/dev/snippets"
+"~/dev/dotfiles"
+)))
 
 (autoload 'mode-compile "mode-compile"
    "Command to compile current buffer file based on the major mode" t)
