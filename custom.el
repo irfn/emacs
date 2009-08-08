@@ -31,6 +31,9 @@
 "~/dev/dotfiles"
 )))
 
+(require 'maxframe)
+(add-hook 'window-setup-hook 'maximize-frame t)
+
 (autoload 'mode-compile "mode-compile"
    "Command to compile current buffer file based on the major mode" t)
 (global-set-key "\C-cc" 'mode-compile)

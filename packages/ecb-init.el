@@ -22,8 +22,5 @@
 (ecb-layout-switch "left3")
 (ecb-activate)
 
-;;(global-set-key (kbd "<f6>") 'ecb-goto-window-sources)
-;;(global-set-key (kbd "<f7>") 'ecb-goto-window-methods)
-
 (ecb-activate)
 (ecb-toggle-ecb-windows)
