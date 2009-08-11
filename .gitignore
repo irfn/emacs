@@ -3,3 +3,4 @@ places
 */**/*.elc
 *.elc
 url/*
+auto-save-list
