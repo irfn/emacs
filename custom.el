@@ -15,13 +15,6 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq default-tab-width 2)
 
-
-(require 'linum)
-(custom-set-variables
- '(linum-format "%4d "))
-(line-number-mode)
-(global-linum-mode 1)
-
 (setq rinari-tags-file-name "TAGS")
 (setq my-global-projects-dirs (quote (
 "~/dev/elisp"
