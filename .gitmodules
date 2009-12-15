@@ -15,7 +15,7 @@
 	url = git://github.com/pat-maddox/ecb.git
 [submodule "packages/yasnippet"]
 	path = packages/yasnippet
-	url = git://github.com/defunkt/yasnippet.git
+	url = git://github.com/eschulte/yasnippet.git
 [submodule "packages/jump.el"]
 	path = packages/jump.el
 	url = git://github.com/eschulte/jump.el.git
