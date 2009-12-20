@@ -17,6 +17,7 @@
 (load-file "~/.emacs.d/packages/yaml-init.el")
 (load-file "~/.emacs.d/packages/twit-el-init.el")
 (load-file "~/.emacs.d/packages/clojure-init.el")
+(load-file "~/.emacs.d/packages/haskell-init.el")
 (load-file "~/.emacs.d/packages/php-mode.el")
 (load-file "~/.emacs.d/packages/linum-init.el")
 (load-file "~/.emacs.d/packages/markdown-init.el")
