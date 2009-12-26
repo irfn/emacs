@@ -21,7 +21,7 @@
 (load-file "~/.emacs.d/packages/php-mode.el")
 (load-file "~/.emacs.d/packages/linum-init.el")
 (load-file "~/.emacs.d/packages/markdown-init.el")
-(load-file "~/.emacs.d/packages/espresso-init.el")
+(load-file "~/.emacs.d/packages/js2-init.el")
 (load-file "~/.emacs.d/packages/color-theme-init.el")
 (load-file "~/.emacs.d/packages/inkpot-init.el")
 (load-file "~/.emacs.d/packages/zen-init.el")
