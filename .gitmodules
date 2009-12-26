@@ -64,3 +64,6 @@
 [submodule "packages/espresso.el"]
 	path = packages/espresso.el
 	url = git://github.com/justinlilly/espresso.el.git
+[submodule "packages/js2-mode"]
+	path = packages/js2-mode
+	url = git://github.com/irfn/js2-mode.git
