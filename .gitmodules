@@ -67,3 +67,6 @@
 [submodule "packages/js2-mode"]
 	path = packages/js2-mode
 	url = git://github.com/irfn/js2-mode.git
+[submodule "packages/nxhtml"]
+	path = packages/nxhtml
+	url = git://github.com/emacsmirror/nxhtml.git
