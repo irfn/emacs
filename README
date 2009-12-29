@@ -3,6 +3,8 @@
 irfn@firefly ~/dev/elisp >git clone git://github.com/irfn/emacs.git
 irfn@firefly ~ >ln -s dev/elisp/emacs .emacs.d
 
+
+
 # For Aquamacs
 irfn@firefly ~ >cat  ~/Library/Preferences/Aquamacs\ Emacs/Preferences.el
 (load-file "~/.emacs.d/init.el")
