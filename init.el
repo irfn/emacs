@@ -25,6 +25,7 @@
 (load-file "~/.emacs.d/packages/color-theme-init.el")
 (load-file "~/.emacs.d/packages/inkpot-init.el")
 (load-file "~/.emacs.d/packages/zen-init.el")
+(load-file "~/.emacs.d/packages/highlight-current-line.el")
 
 ;;(load-file "~/.emacs.d/packages/twilight-init.el")
 ;;(load-file "~/.emacs.d/packages/zenburn-init")
@@ -40,5 +41,4 @@
 (require 'ido)
 (org-mode)
 (color-theme-zen-and-art)
-
 (put 'dired-find-alternate-file 'disabled nil)

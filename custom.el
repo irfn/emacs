@@ -45,3 +45,4 @@
 
 (global-set-key (kbd "A-d") "\C-a\C- \C-n\M-w\C-y")
 (global-set-key (kbd "A-D") "\M-w\C-y")
+(setq highlight-current-line-globally t)
