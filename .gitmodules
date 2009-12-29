@@ -48,7 +48,7 @@
 	url = git://github.com/technomancy/rinari.git
 [submodule "packages/rspec-mode"]
 	path = packages/rspec-mode
-	url = git://github.com/pezra/rspec-mode.git
+	url = git://github.com/emacsmirror/rspec-mode.git
 [submodule "packages/twit-el"]
 	path = packages/twit-el
 	url = git://github.com/ieure/twit-el.git
