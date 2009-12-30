@@ -70,3 +70,6 @@
 [submodule "packages/nxhtml"]
 	path = packages/nxhtml
 	url = git://github.com/emacsmirror/nxhtml.git
+[submodule "packages/zen-and-art"]
+	path = packages/zen-and-art
+	url = git://github.com/irfn/zen-and-art.git
