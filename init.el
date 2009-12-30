@@ -49,7 +49,6 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(case-fold-search nil)
- '(cua-mode nil nil (cua-base))
  '(ecb-layout-name "left3")
  '(ecb-layout-window-sizes (quote (("left3" (0.1935483870967742 . 0.43137254901960786) (0.1935483870967742 . 0.3333333333333333) (0.1935483870967742 . 0.21568627450980393)))))
  '(ecb-options-version "2.33beta2")
@@ -59,8 +58,7 @@
  '(mumamo-chunk-coloring 0)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(tool-bar-mode nil)
- '(transient-mark-mode t))
+ '(tool-bar-mode nil))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -70,3 +68,4 @@
  '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background dark)) (:background "#373436")))))
 
 (ecb-toggle-ecb-windows)
+(put 'set-goal-column 'disabled nil)
