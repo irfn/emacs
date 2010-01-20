@@ -54,7 +54,7 @@
 	url = git://github.com/ieure/twit-el.git
 [submodule "packages/textmate.el"]
 	path = packages/textmate.el
-	url = git@github.com:irfn/textmate.el.git
+	url = git://github.com/irfn/textmate.el.git 
 [submodule "packages/swank-clojure"]
 	path = packages/swank-clojure
 	url = git://github.com/technomancy/swank-clojure.git
