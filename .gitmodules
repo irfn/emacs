@@ -12,7 +12,7 @@
 	url = git://github.com/defunkt/cheat.el.git
 [submodule "packages/ecb"]
 	path = packages/ecb
-	url = git://github.com/pat-maddox/ecb.git
+	url = git://github.com/patmaddox/ecb.git
 [submodule "packages/yasnippet"]
 	path = packages/yasnippet
 	url = git://github.com/dirceu/yasnippet.git
@@ -54,7 +54,7 @@
 	url = git://github.com/ieure/twit-el.git
 [submodule "packages/textmate.el"]
 	path = packages/textmate.el
-	url = git@github.com:irfn/textmate.el.git
+	url = git://github.com/irfn/textmate.el.git 
 [submodule "packages/swank-clojure"]
 	path = packages/swank-clojure
 	url = git://github.com/technomancy/swank-clojure.git
