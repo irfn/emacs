@@ -26,6 +26,7 @@
 (load-file "~/.emacs.d/packages/inkpot-init.el")
 (load-file "~/.emacs.d/packages/zen-init.el")
 (load-file "~/.emacs.d/packages/highlight-current-line.el")
+(load-file "~/.emacs.d/packages/growl-init.el")
 (load "~/.emacs.d/packages/nxhtml/autostart.el")
 ;;(load-file "~/.emacs.d/packages/twilight-init.el")
 ;;(load-file "~/.emacs.d/packages/zenburn-init")
