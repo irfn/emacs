@@ -5,34 +5,46 @@
     (setq system-name (car (split-string system-name "\\."))))
 (load-file "~/.emacs.d/paths.el")
 
+(defun packages-path()
+	"packages path"
+	"~/.emacs.d/packages/")
+
+(defun packages(names)
+	(mapcar (lambda (name) (concat (packages-path) name)) names))
+
 ;; Enable/ Disable by commenting out lines
-(load-file "~/.emacs.d/packages/distel-init.el")
-(load-file "~/.emacs.d/packages/ecb-init.el")
-(load-file "~/.emacs.d/packages/magit-init.el")
-(load-file "~/.emacs.d/packages/yas-init.el")
-(load-file "~/.emacs.d/packages/rinari-init.el")
-(load-file "~/.emacs.d/packages/rspec-init.el")
-(load-file "~/.emacs.d/packages/textmate-init.el")
-;;(load-file "~/.emacs.d/packages/haml-init.el")
-(load-file "~/.emacs.d/packages/yaml-init.el")
-(load-file "~/.emacs.d/packages/twit-el-init.el")
-(load-file "~/.emacs.d/packages/clojure-init.el")
-(load-file "~/.emacs.d/packages/haskell-init.el")
-(load-file "~/.emacs.d/packages/php-mode.el")
-(load-file "~/.emacs.d/packages/linum-init.el")
-(load-file "~/.emacs.d/packages/markdown-init.el")
-(load-file "~/.emacs.d/packages/js2-init.el")
-(load-file "~/.emacs.d/packages/color-theme-init.el")
-(load-file "~/.emacs.d/packages/inkpot-init.el")
-(load-file "~/.emacs.d/packages/zen-init.el")
-(load-file "~/.emacs.d/packages/highlight-current-line.el")
-(load-file "~/.emacs.d/packages/growl-init.el")
+(mapcar
+ (lambda(package)
+	 (load-file (concat package ".el"))) 
+ (packages '( 
+"distel-init"
+"ecb-init"
+"magit-init"
+"yas-init"
+"rinari-init"
+"rspec-init"
+"textmate-init"
+;;"haml-init"
+"yaml-init"
+"twit-el-init"
+"clojure-init"
+"haskell-init"
+"php-mode"
+"linum-init"
+"markdown-init"
+"js2-init"
+"color-theme-init"
+"inkpot-init"
+"zen-init"
+"highlight-current-line"
+"growl-init"
+;;"twilight-init"
+;;"zenburn-init"
+)))
 (load "~/.emacs.d/packages/nxhtml/autostart.el")
-;;(load-file "~/.emacs.d/packages/twilight-init.el")
-;;(load-file "~/.emacs.d/packages/zenburn-init")
 
 
-;; Default Loads (These come pre-packaged with Aquamacs)
+;; Default Loads 
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
