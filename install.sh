@@ -6,12 +6,12 @@ function echoWithBars() {
 	echobar	
 }
 
-# git submodule init
-# echoWithBars "submodules inited"
-# git submodule update
-# echoWithBars "submodules updated"
-# 
-# 
+git submodule init
+echoWithBars "submodules inited"
+git submodule update
+echoWithBars "submodules updated"
+
+
 sed -e 's/^CEDET.*$/CEDET=\~\/\.emacs\.d\/packages\/cedit/' packages/ecb/Makefile > packages/ecb/MakefileMod
 
 
