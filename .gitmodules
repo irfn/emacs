@@ -43,9 +43,6 @@
 [submodule "packages/inkpot-mod"]
 	path = packages/inkpot-mod
 	url = git://github.com/andrewellis/inkpot-mod.git
-[submodule "packages/rinari"]
-	path = packages/rinari
-	url = git://github.com/eschulte/rinari.git 
 [submodule "packages/rspec-mode"]
 	path = packages/rspec-mode
 	url = git://github.com/emacsmirror/rspec-mode.git
