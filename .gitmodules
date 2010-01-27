@@ -10,9 +10,6 @@
 [submodule "packages/cheat.el"]
 	path = packages/cheat.el
 	url = git://github.com/defunkt/cheat.el.git
-[submodule "packages/ecb"]
-	path = packages/ecb
-	url = git://github.com/patmaddox/ecb.git
 [submodule "packages/yasnippet"]
 	path = packages/yasnippet
 	url = git://github.com/dirceu/yasnippet.git
@@ -75,4 +72,4 @@
 	url = git://github.com/eschulte/rinari.git
 [submodule "packages/cedet"]
 	path = packages/cedet
-	url = git://github.com/emacs-pkg-mirrors/cedet.git
+	url = git://github.com/emacsmirror/cedet.git
