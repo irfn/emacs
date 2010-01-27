@@ -38,6 +38,7 @@
 "zen-init"
 "highlight-current-line"
 "growl-init"
+"dvc-init"
 ;;"twilight-init"
 ;;"zenburn-init"
 )))

@@ -22,6 +22,10 @@ function emacsMake() {
 	elif [ `ls $1 | grep Makefile | wc -l` -ne 0 ]
 	then
 		make -s -C $1
+	elif [ `ls $1 | grep configure.ac | wc -l` -ne 0 ]
+	then
+		cd $1;autoconf && ./configure;cd -
+		make -s -C $1
 	else
 		emacs -batch -f batch-byte-compile $1/*.el
 	fi		
