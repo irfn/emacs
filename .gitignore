@@ -4,3 +4,4 @@ places
 *.elc
 url/*
 auto-save-list
+*.before_ecb_2.*
