@@ -24,7 +24,7 @@
 "rinari-init"
 "rspec-init"
 "textmate-init"
-;;"haml-init"
+"haml-init"
 "yaml-init"
 ;;"twit-el-init"
 "clojure-init"
@@ -38,7 +38,7 @@
 "zen-init"
 "highlight-current-line"
 "growl-init"
-;;"dvc-init"
+"dvc-init"
 ;;"twilight-init"
 ;;"zenburn-init"
 )))
@@ -64,7 +64,6 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(ecb-options-version "2.40")
- '(linum-format "%4d ")
  '(show-paren-mode t)
  '(transient-mark-mode t))
 (custom-set-faces
