@@ -39,6 +39,7 @@
 "highlight-current-line"
 "growl-init"
 "dvc-init"
+"espresso-init"
 ;;"twilight-init"
 ;;"zenburn-init"
 )))
