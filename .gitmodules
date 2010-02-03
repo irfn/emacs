@@ -79,6 +79,3 @@
 [submodule "packages/dvc"]
 	path = packages/dvc
 	url = git://github.com/emacsmirror/dvc.git
-[submodule "packages/haml-mode"]
-	path = packages/haml-mode
-	url = git://github.com/nex3/haml.git
