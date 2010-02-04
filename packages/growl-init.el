@@ -4,6 +4,6 @@
 (defun growl-a-bit(buffer string)
 	(cond ((string-match "finished" string)
 		(growl "fortune" (shell-command-to-string "fortune")))
-		(0 (growl "some" "insult"))))
+		(0 (growl "fail" (shell-command-to-string "fortune -o")))))
 
 (add-hook 'compilation-finish-functions 'growl-a-bit)
