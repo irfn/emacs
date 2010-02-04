@@ -11,15 +11,9 @@ irfn@firefly ~ >cat  ~/Library/Preferences/Aquamacs\ Emacs/Preferences.el
 
 
 irfn@firefly ~ >cd .emacs.d
-irfn@firefly ~/.emacs.d >./update
+irfn@firefly ~/.emacs.d >./install.sh
 this will init all the submodules and update them 
-
-irfn@firefly ~/.emacs.d(master) >cd packages
-cd to each of distel, cedit, ecb
-and make each of them.
-ecb has a problem of hardcoded path in Makefile that you will have to change 
-CEDET=~/.emacs.d/packages/cedit
-i intend to create a script to do the make for you.
+and make all the packages
 
 
 If you dont want a particular mode just comment with a semicolon colon (;;) a load from init.el
