@@ -25,7 +25,7 @@
 "textmate-init"
 "haml-init"
 "yaml-init"
-;;"twit-el-init"
+"twit-el-init"
 "clojure-init"
 "haskell-init"
 ;;"php-mode"
@@ -39,6 +39,7 @@
 "growl-init"
 "dvc-init"
 "espresso-init"
+"duplicate-line"
 ;;"twilight-init"
 ;;"zenburn-init"
 )))
