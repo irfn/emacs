@@ -16,6 +16,7 @@
 (setq default-tab-width 2)
 
 (setq rinari-tags-file-name "TAGS")
+(setq custom-file "~/.emacs.d/customize.el")
 
 (defun my-settings-for(setting-name)
 	(split-string 
