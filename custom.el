@@ -15,14 +15,15 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq default-tab-width 2)
 
+
 (setq rinari-tags-file-name "TAGS")
-(setq my-global-projects-dirs (quote (
-"~/dev/elisp"
-"~/dev/ruby/ror"
-"~/dev/clojure"
-"~/dev/snippets"
-"~/dev/dotfiles"
-)))
+
+(defun my-global-projects-dirs()
+	(split-string 
+	(shell-command-to-string "cat ~/.work_dirs") 
+	"\n" t))
+
+ (setq ecb-source-path (my-global-projects-dirs))
 
 (require 'maxframe)
 (add-hook 'window-setup-hook 'maximize-frame t)
