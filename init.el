@@ -3,7 +3,6 @@
 (load-file "~/.emacs.d/custom.el")
 (if (eq system-type 'darwin)
     (setq system-name (car (split-string system-name "\\."))))
-(load-file "~/.emacs.d/paths.el")
 
 (defun packages-path()
 	"packages path"

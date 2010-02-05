@@ -15,15 +15,17 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq default-tab-width 2)
 
-
 (setq rinari-tags-file-name "TAGS")
 
-(defun my-global-projects-dirs()
+(defun my-settings-for(setting-name)
 	(split-string 
-	(shell-command-to-string "cat ~/.work_dirs") 
+	(shell-command-to-string (concat "cat ~/." setting-name)) 
 	"\n" t))
 
- (setq ecb-source-path (my-global-projects-dirs))
+(setq ecb-source-path (my-settings-for "work_dirs"))
+
+(setq exec-path (append (mapcar 'expand-file-name (split-string
+			(car (my-settings-for "paths")) ":")) exec-path))
 
 (require 'maxframe)
 (add-hook 'window-setup-hook 'maximize-frame t)
