@@ -39,10 +39,14 @@
   (interactive)
   (setq outline-regexp " *\\(def\\|if\\|when\\|do\\)"))
 
-(setq textmate-gf-exclude 
+(setq textmate-gf-exclude
   "/\\.|vendor|fixtures|tmp|log|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc|\\.elc|\\.jar")
 (setq auto-mode-alist (cons '("Rakefile$" . ruby-mode) auto-mode-alist))
 
 (global-set-key (kbd "A-d") "\C-a\C- \C-n\M-w\C-y")
 (global-set-key (kbd "A-D") "\M-w\C-y")
 (setq highlight-current-line-globally t)
+(setq initial-scratch-message nil)
+
+(set-frame-width (selected-frame) 200)
+(set-frame-height (selected-frame) 100)
