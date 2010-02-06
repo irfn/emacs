@@ -8,3 +8,4 @@
 (global-set-key "\C-ck" 'mode-compile-kill)
 
 (global-set-key (kbd "\C-cd") 'duplicate-line)
+(global-set-key (kbd "ESC M-d") 'ecb-toggle-ecb-windows)
