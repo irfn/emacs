@@ -9,3 +9,9 @@
 
 (global-set-key (kbd "\C-cd") 'duplicate-line)
 (global-set-key (kbd "ESC M-d") 'ecb-toggle-ecb-windows)
+
+(define-key ac-completing-map "\M-n" 'ac-next)
+(define-key ac-completing-map "\M-p" 'ac-previous)
+(define-key ac-mode-map (kbd "ESC M-/") 'auto-complete) 
+(global-set-key "\M-/" 'auto-complete)
+(global-set-key "ESC M-/" 'dabbrev-expand)

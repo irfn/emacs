@@ -79,3 +79,6 @@
 [submodule "packages/dvc"]
 	path = packages/dvc
 	url = git://github.com/emacsmirror/dvc.git
+[submodule "packages/autocomplete"]
+	path = packages/autocomplete
+	url = git://github.com/m2ym/auto-complete.git

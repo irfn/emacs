@@ -52,6 +52,7 @@
 (require 'duplicate-line)
 (require 'growl-init)
 (require 'yas-init)
+(require 'autocomplete-init)
 ;; VC
 (require 'dvc-init)
 (require 'magit-init)
