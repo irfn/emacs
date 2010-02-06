@@ -1,6 +1,47 @@
 (setq load-path (cons "~/.emacs.d" load-path))
 (setq load-path (cons "~/.emacs.d/packages" load-path))
-(load-file "~/.emacs.d/custom.el")
+(setq custom-file "~/.emacs.d/custom.el")
+
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) Need this on osx
+(setq inhibit-splash-screen t)
+(setq make-backup-files nil)
+(custom-set-variables
+ '(show-paren-mode t)
+ '(transient-mark-mode t))
+(c-mode)
+(c-toggle-hungry-state)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq default-tab-width 2)
+(setq rinari-tags-file-name "TAGS")
+
+(defun my-settings-for(setting-name)
+	(split-string 
+	(shell-command-to-string (concat "cat ~/." setting-name)) 
+	"\n" t))
+(setq ecb-source-path (my-settings-for "work_dirs"))
+(setq exec-path (append (mapcar 'expand-file-name (split-string
+			(car (my-settings-for "paths")) ":")) exec-path))
+
+(require 'maxframe)
+(add-hook 'window-setup-hook 'maximize-frame t)
+
+(autoload 'mode-compile "mode-compile"
+   "Command to compile current buffer file based on the major mode" t)
+(autoload 'mode-compile-kill "mode-compile"
+ "Command to kill a compilation launched by `mode-compile'" t)
+
+(defun ruby-outline-mode ()
+  (interactive)
+  (setq outline-regexp " *\\(def\\|if\\|when\\|do\\)"))
+(setq *textmate-gf-exclude*
+  "/\\.|vendor|fixtures|tmp|log|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc|\\.elc|\\.jar|\\.class")
+(setq auto-mode-alist (cons '("Rakefile$" . ruby-mode) auto-mode-alist))
+(setq highlight-current-line-globally t)
+(setq initial-scratch-message nil)
+
+(set-frame-width (selected-frame) 200)
+(set-frame-height (selected-frame) 100)
 (if (eq system-type 'darwin)
     (setq system-name (car (split-string system-name "\\."))))
 
@@ -58,6 +99,7 @@
 (color-theme-zen-and-art)
 (put 'dired-find-alternate-file 'disabled nil)
 
-(load-file "~/.emacs.d/customize.el")
+(load-file "~/.emacs.d/custom.el")
+(load-file "~/.emacs.d/key-bindings.el")
 (ecb-toggle-ecb-windows)
 (put 'set-goal-column 'disabled nil)
