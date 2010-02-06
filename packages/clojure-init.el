@@ -9,3 +9,5 @@
   '(progn
      (add-to-list 'swank-clojure-init-files
                   (expand-file-name "~/.clojure/user.clj"))))
+
+(provide 'clojure-init)

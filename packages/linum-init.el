@@ -3,3 +3,4 @@
 (custom-set-variables
  '(linum-format "%4d "))
 (line-number-mode)
+(provide 'linum-init)

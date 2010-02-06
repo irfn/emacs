@@ -45,47 +45,43 @@
 (if (eq system-type 'darwin)
     (setq system-name (car (split-string system-name "\\."))))
 
-(defun packages-path()
-	"packages path"
-	"~/.emacs.d/packages/")
+;; Common
+(require 'ecb-init)
+(require 'linum-init)
+(require 'highlight-current-line)
+(require 'duplicate-line)
+(require 'growl-init)
+(require 'yas-init)
+;; VC
+(require 'dvc-init)
+(require 'magit-init)
 
-(defun packages(names)
-	(mapcar (lambda (name) (concat (packages-path) name)) names))
+(require 'twit-el-init)
+(require 'markdown-init)
+(require 'yaml-init)
+;; Web
+(require 'js2-init)
+(require 'espresso-init)
 
-;; Enable/ Disable by commenting out lines
-(mapcar
- (lambda(package)
-	 (load-file (concat package ".el"))) 
- (packages '( 
-"distel-init"
-"ecb-init"
-"magit-init"
-"yas-init"
-"rinari-init"
-"rspec-init"
-"textmate-init"
-"haml-init"
-"yaml-init"
-"twit-el-init"
-"clojure-init"
-"haskell-init"
-;;"php-mode"
-"linum-init"
-"markdown-init"
-"js2-init"
-"color-theme-init"
-"inkpot-init"
-"zen-init"
-"highlight-current-line"
-"growl-init"
-"dvc-init"
-"espresso-init"
-"duplicate-line"
-;;"twilight-init"
-;;"zenburn-init"
-)))
+;; Rails
+(require 'rinari-init)
+(require 'rspec-init)
+(require 'textmate-init)
+(require 'haml-init)
+
+;;(require 'php-mode)
+(require 'clojure-init)
+(require 'distel-init)
+(require 'haskell-init)
+
+;;Color
+(require 'color-theme-init)
+;;(require 'inkpot-init)
+;;(require 'zenburn-init)
+;;(require 'twilight-init)
+(require 'zen-init)
+
 (load "~/.emacs.d/packages/nxhtml/autostart.el")
-
 
 ;; Default Loads 
 (require 'cl)

@@ -7,3 +7,4 @@
 			)
 	"/extra/haml-mode.el")
  )
+(provide 'haml-init)

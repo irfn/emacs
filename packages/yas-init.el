@@ -2,3 +2,4 @@
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.snippets")
+(provide 'yas-init)

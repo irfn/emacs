@@ -40,3 +40,4 @@
 (require 'twit)
 (twit-minor-mode)
 (setq twit-show-user-images t)
+(provide 'twit-el-init)

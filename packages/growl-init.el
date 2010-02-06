@@ -7,3 +7,4 @@
 		(0 (growl "fail" (shell-command-to-string "fortune -o")))))
 
 (add-hook 'compilation-finish-functions 'growl-a-bit)
+(provide 'growl-init)

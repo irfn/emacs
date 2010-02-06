@@ -4,3 +4,4 @@
 (require 'distel)
 (distel-setup)
 (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
+(provide 'distel-init)

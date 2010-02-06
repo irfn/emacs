@@ -6,3 +6,4 @@
 ;;
 ;; There is no consensus on an official file extension so change `.text` to
 ;; `.mdwn`, `.md`, `.mdt`, or whatever you call your markdown files.
+(provide 'markdown-init)

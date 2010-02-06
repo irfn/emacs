@@ -7,3 +7,4 @@
 (global-set-key "\C-cc" 'mode-compile)
 (global-set-key "\C-ck" 'mode-compile-kill)
 
+(global-set-key (kbd "\C-cd") 'duplicate-line)
