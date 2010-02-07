@@ -45,6 +45,13 @@
 (if (eq system-type 'darwin)
     (setq system-name (car (split-string system-name "\\."))))
 
+(defun open-buffer-path ()
+"Run finder on the directory of the current buffer."
+(interactive)
+(if (eq system-type 'darwin)
+		(shell-command (concat "open " (file-name-directory (buffer-file-name))))))
+
+
 ;; Common
 (require 'ecb-init)
 (require 'linum-init)

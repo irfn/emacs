@@ -15,3 +15,4 @@
 (define-key ac-mode-map (kbd "\M-/") 'auto-complete) 
 (global-set-key "\M-/" 'auto-complete)
 (global-set-key "\M-?" 'dabbrev-expand)
+(global-set-key (kbd "\C-co") 'open-buffer-path)
