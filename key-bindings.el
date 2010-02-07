@@ -12,6 +12,6 @@
 
 (define-key ac-completing-map "\M-n" 'ac-next)
 (define-key ac-completing-map "\M-p" 'ac-previous)
-(define-key ac-mode-map (kbd "ESC M-/") 'auto-complete) 
+(define-key ac-mode-map (kbd "\M-/") 'auto-complete) 
 (global-set-key "\M-/" 'auto-complete)
-(global-set-key "ESC M-/" 'dabbrev-expand)
+(global-set-key "\M-?" 'dabbrev-expand)

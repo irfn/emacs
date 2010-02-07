@@ -65,6 +65,7 @@
 (require 'espresso-init)
 
 ;; Rails
+(require 'rsense-init)
 (require 'rinari-init)
 (require 'rspec-init)
 (require 'textmate-init)
