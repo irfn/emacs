@@ -39,6 +39,8 @@
 (setq auto-mode-alist (cons '("Rakefile$" . ruby-mode) auto-mode-alist))
 (setq highlight-current-line-globally t)
 (setq initial-scratch-message nil)
+(setq rct-get-all-methods-command "PAGER=cat fri -l")
+
 
 (set-frame-width (selected-frame) 200)
 (set-frame-height (selected-frame) 100)
@@ -60,6 +62,8 @@
 (require 'growl-init)
 (require 'yas-init)
 (require 'autocomplete-init)
+(require 'anything)
+(require 'anything-show-completion)
 ;; VC
 (require 'dvc-init)
 (require 'magit-init)
@@ -71,11 +75,15 @@
 (require 'js2-init)
 (require 'espresso-init)
 
-;; Rails
+;;Ruby 
 (require 'rsense-init)
-(require 'rinari-init)
+(require 'ri-emacs-init)
 (require 'rspec-init)
 (require 'textmate-init)
+(require 'rcodetools)
+(require 'anything-rcodetools)
+;; Rails
+(require 'rinari-init)
 (require 'haml-init)
 
 ;;(require 'php-mode)

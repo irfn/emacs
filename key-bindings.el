@@ -16,3 +16,4 @@
 (global-set-key "\M-/" 'auto-complete)
 (global-set-key "\M-?" 'dabbrev-expand)
 (global-set-key (kbd "\C-co") 'open-buffer-path)
+(define-key anything-map "\C-cz" 'anything-execute-persistent-action)
