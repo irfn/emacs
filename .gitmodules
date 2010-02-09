@@ -85,3 +85,6 @@
 [submodule "packages/ri-emacs"]
 	path = packages/ri-emacs
 	url = git://github.com/pedz/ri-emacs.git
+[submodule "packages/browse-kill-ring"]
+	path = packages/browse-kill-ring
+	url = git://github.com/emacsmirror/browse-kill-ring.git
