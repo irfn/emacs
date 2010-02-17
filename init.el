@@ -85,7 +85,7 @@
 (require 'anything-rcodetools)
 ;; Rails
 (require 'rinari-init)
-(require 'haml-init)
+;;(require 'haml-init)
 
 ;;(require 'php-mode)
 (require 'clojure-init)
