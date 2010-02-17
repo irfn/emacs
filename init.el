@@ -53,7 +53,7 @@
 (if (eq system-type 'darwin)
 		(shell-command (concat "open " (file-name-directory (buffer-file-name))))))
 
-
+(require 'cl)
 ;; Common
 (require 'ecb-init)
 (require 'linum-init)
@@ -88,6 +88,8 @@
 ;;(require 'haml-init)
 
 ;;(require 'php-mode)
+(load-file "~/.emacs.d/packages/slime-init.el")
+;;(require 'slime-init)
 (require 'clojure-init)
 (require 'distel-init)
 (require 'haskell-init)
@@ -102,7 +104,7 @@
 (load "~/.emacs.d/packages/nxhtml/autostart.el")
 
 ;; Default Loads 
-(require 'cl)
+
 (require 'saveplace)
 (require 'ffap)
 (require 'uniquify)

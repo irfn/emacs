@@ -2,9 +2,7 @@
 (autoload 'clojure-mode "clojure-mode" "A major mode for Clojure" t)
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 (setq load-path (cons  "~/.emacs.d/packages/swank-clojure" load-path))
-(require 'swank-clojure-autoload)
-(setq swank-clojure-jar-path "/opt/local/share/java/clojure/lib/clojure.jar")
-
+(require 'swank-clojure)
 (eval-after-load 'swank-clojure
   '(progn
      (add-to-list 'swank-clojure-init-files
