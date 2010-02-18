@@ -17,6 +17,7 @@
  '(ecb-vc-enable-support t)
  '(ecb-windows-width 0.2)
  '(linum-format "%4d ")
+ '(mumamo-chunk-coloring 0)
  '(show-paren-mode t)
  '(transient-mark-mode t))
 (custom-set-faces
@@ -24,4 +25,6 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- )
+ '(mumamo-background-chunk-major ((((class color) (min-colors 88) (background dark)) (:background "#2A2828"))))
+ '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background dark)) (:background "#373436"))))
+)
