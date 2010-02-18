@@ -93,4 +93,4 @@
 	url = git://github.com/emacsmirror/jdee.git
 [submodule "packages/slime"]
 	path = packages/slime
-	url = git://github.com/technomancy/slime.git
+	url = git://github.com/emacsmirror/slime.git
