@@ -88,8 +88,7 @@
 ;;(require 'haml-init)
 
 ;;(require 'php-mode)
-(load-file "~/.emacs.d/packages/slime-init.el")
-;;(require 'slime-init)
+(require 'slime-init)
 (require 'clojure-init)
 (require 'distel-init)
 (require 'haskell-init)
