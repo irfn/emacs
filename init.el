@@ -55,6 +55,7 @@
 
 (require 'cl)
 ;; Common
+(require 'ack)
 (require 'ecb-init)
 (require 'linum-init)
 (require 'highlight-current-line)

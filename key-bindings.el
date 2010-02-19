@@ -19,3 +19,5 @@
 (define-key anything-map "\C-cz" 'anything-execute-persistent-action)
 
 (global-set-key "\C-cy" 'browse-kill-ring)
+
+(global-set-key (kbd "ESC M-a") 'ack)
