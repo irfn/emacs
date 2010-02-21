@@ -8,4 +8,8 @@
      (add-to-list 'swank-clojure-init-files
                   (expand-file-name "~/.clojure/user.clj"))))
 
+(autoload 'paredit-mode "paredit"
+     "Minor mode for pseudo-structurally editing Lisp code."
+     t)
+
 (provide 'clojure-init)
