@@ -81,7 +81,7 @@
 	url = git://github.com/emacsmirror/dvc.git
 [submodule "packages/autocomplete"]
 	path = packages/autocomplete
-	url = git://github.com/m2ym/auto-complete.git
+	url = git://github.com/irfn/auto-complete.git
 [submodule "packages/ri-emacs"]
 	path = packages/ri-emacs
 	url = git://github.com/pedz/ri-emacs.git
