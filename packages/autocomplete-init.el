@@ -2,6 +2,7 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/packages/autocomplete/dict")
 
 (setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
 (add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols)))

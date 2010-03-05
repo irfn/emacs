@@ -14,6 +14,7 @@
 (define-key ac-completing-map "\M-p" 'ac-previous)
 (define-key ac-mode-map (kbd "\M-/") 'auto-complete) 
 (define-key ac-mode-map (kbd "ESC M-/") 'ac-complete-dictionary)
+(define-key ac-mode-map (kbd "ESC M-j") 'ac-complete-yasnippet)
 (global-set-key "\M-/" 'auto-complete)
 (global-set-key "\M-?" 'dabbrev-expand)
 (global-set-key (kbd "\C-co") 'open-buffer-path)
