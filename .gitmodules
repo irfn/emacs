@@ -94,3 +94,6 @@
 [submodule "packages/android-mode"]
 	path = packages/android-mode
 	url = git://github.com/remvee/android-mode.git
+[submodule "packages/clojure-mode"]
+	path = packages/clojure-mode
+	url = git://github.com/jochu/clojure-mode.git
