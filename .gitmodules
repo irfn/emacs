@@ -88,3 +88,6 @@
 [submodule "packages/browse-kill-ring"]
 	path = packages/browse-kill-ring
 	url = https://github.com/todesschaf/browse-kill-ring.git
+[submodule "packages/textmate.el"]
+	path = packages/textmate.el
+	url = https://github.com/defunkt/textmate.el.git
