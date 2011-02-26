@@ -67,9 +67,6 @@
 [submodule "packages/rinari"]
 	path = packages/rinari
 	url = git://github.com/eschulte/rinari.git
-[submodule "packages/cedet"]
-	path = packages/cedet
-	url = git://github.com/emacsmirror/cedet.git
 [submodule "packages/ecb"]
 	path = packages/ecb
 	url = git://github.com/emacsmirror/ecb.git
