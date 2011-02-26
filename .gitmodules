@@ -85,3 +85,6 @@
 [submodule "packages/clojure-mode"]
 	path = packages/clojure-mode
 	url = git://github.com/jochu/clojure-mode.git
+[submodule "packages/browse-kill-ring"]
+	path = packages/browse-kill-ring
+	url = https://github.com/todesschaf/browse-kill-ring.git
