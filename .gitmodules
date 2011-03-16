@@ -85,3 +85,6 @@
 [submodule "packages/rvm.el"]
 	path = packages/rvm.el
 	url = https://github.com/senny/rvm.el.git
+[submodule "packages/yasnippet"]
+	path = packages/yasnippet
+	url = https://github.com/emacsmirror/yasnippet.git
