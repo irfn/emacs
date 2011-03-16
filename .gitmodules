@@ -37,9 +37,6 @@
 [submodule "packages/rspec-mode"]
 	path = packages/rspec-mode
 	url = git://github.com/emacsmirror/rspec-mode.git
-[submodule "packages/twit-el"]
-	path = packages/twit-el
-	url = git://github.com/ieure/twit-el.git
 [submodule "packages/swank-clojure"]
 	path = packages/swank-clojure
 	url = git://github.com/technomancy/swank-clojure.git

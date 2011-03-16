@@ -1,6 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/packages/cedet")
 (add-to-list 'load-path "~/.emacs.d/packages/ecb")
-(load-file "~/.emacs.d/packages/cedet/common/cedet.el")
 
 (global-ede-mode 1)                    
 (semantic-load-enable-code-helpers)    

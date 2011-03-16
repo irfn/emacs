@@ -56,7 +56,7 @@
 (require 'cl)
 ;; Common
 (require 'ack)
-(require 'ecb-init)
+;;(require 'ecb-init)
 (require 'linum-init)
 (require 'highlight-current-line)
 (require 'duplicate-line)
@@ -67,10 +67,9 @@
 (require 'anything)
 (require 'anything-show-completion)
 ;; VC
-(require 'dvc-init)
+;;(require 'dvc-init)
 (require 'magit-init)
 
-(require 'twit-el-init)
 (require 'markdown-init)
 (require 'yaml-init)
 ;; Web
@@ -85,13 +84,13 @@
 (require 'rcodetools)
 (require 'anything-rcodetools)
 ;; Rails
-(require 'rinari-init)
+;;(require 'rinari-init)
 ;;(require 'haml-init)
 
 ;;(require 'php-mode)
 (require 'slime-init)
 (require 'clojure-init)
-(require 'distel-init)
+;;(require 'distel-init)
 (require 'haskell-init)
 
 ;;Color
@@ -117,5 +116,5 @@
 
 (load-file "~/.emacs.d/custom.el")
 (load-file "~/.emacs.d/key-bindings.el")
-(ecb-toggle-ecb-windows)
+;;(ecb-toggle-ecb-windows)
 (put 'set-goal-column 'disabled nil)
