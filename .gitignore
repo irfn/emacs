@@ -1,3 +1,5 @@
+.#init.el
+#init.el#
 .DS_Store
 places
 */**/*.elc
