@@ -88,3 +88,6 @@
 [submodule "packages/textmate.el"]
 	path = packages/textmate.el
 	url = https://github.com/defunkt/textmate.el.git
+[submodule "packages/rvm.el"]
+	path = packages/rvm.el
+	url = https://github.com/senny/rvm.el.git
