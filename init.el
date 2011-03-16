@@ -82,9 +82,7 @@
 (require 'rspec-init)
 (require 'textmate-init)
 (require 'rcodetools)
-(require 'anything-rcodetools)
-;; Rails
-;;(require 'rinari-init)
+(require 'rvm-init)
 ;;(require 'haml-init)
 
 ;;(require 'php-mode)

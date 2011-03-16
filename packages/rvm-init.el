@@ -2,3 +2,4 @@
 (require 'rvm)
 
 (rvm-use-default)
+(provide 'rvm-init)
