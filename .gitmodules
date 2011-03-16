@@ -13,9 +13,6 @@
 [submodule "packages/yasnippet"]
 	path = packages/yasnippet
 	url = git://github.com/dirceu/yasnippet.git
-[submodule "packages/jump.el"]
-	path = packages/jump.el
-	url = git://github.com/eschulte/jump.el.git
 [submodule "packages/haskell-mode"]
 	path = packages/haskell-mode
 	url = git://github.com/jwiegley/haskell-mode.git

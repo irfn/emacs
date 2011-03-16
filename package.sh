@@ -9,6 +9,7 @@ function echoWithBars() {
 }
 
 function emacsMake() {
+  cd $1;git submodule init;git submodule update
 	if [ `ls $1 | grep MakefileMod | wc -l` -ne 0 ]
 	then
 		make -s -C $1 -f $1/MakefileMod

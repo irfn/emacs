@@ -83,6 +83,7 @@
 (require 'textmate-init)
 (require 'rcodetools)
 (require 'rvm-init)
+(require 'rinari-init)
 ;;(require 'haml-init)
 
 ;;(require 'php-mode)
