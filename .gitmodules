@@ -10,9 +10,6 @@
 [submodule "packages/cheat.el"]
 	path = packages/cheat.el
 	url = git://github.com/defunkt/cheat.el.git
-[submodule "packages/yasnippet"]
-	path = packages/yasnippet
-	url = git://github.com/dirceu/yasnippet.git
 [submodule "packages/haskell-mode"]
 	path = packages/haskell-mode
 	url = git://github.com/jwiegley/haskell-mode.git
