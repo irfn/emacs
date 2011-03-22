@@ -40,7 +40,7 @@
 (setq highlight-current-line-globally t)
 (setq initial-scratch-message nil)
 (setq rct-get-all-methods-command "PAGER=cat fri -l")
-
+(setq yas/snippet-dirs "~/.snippets")
 
 (set-frame-width (selected-frame) 200)
 (set-frame-height (selected-frame) 100)
@@ -84,7 +84,7 @@
 (require 'rcodetools)
 (require 'rvm-init)
 (require 'rinari-init)
-;;(require 'haml-init)
+(require 'haml-init)
 
 ;;(require 'php-mode)
 (require 'slime-init)
@@ -110,7 +110,7 @@
 (require 'recentf)
 (require 'ido)
 (org-mode)
-(color-theme-zen-and-art)
+;;color-theme-zen-and-art)
 (put 'dired-find-alternate-file 'disabled nil)
 
 (load-file "~/.emacs.d/custom.el")

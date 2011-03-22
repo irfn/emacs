@@ -1,5 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
 (require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/.snippets")
+(yas/load-directory yas/snippet-dirs)
+(yas/minor-mode)
 (provide 'yas-init)
