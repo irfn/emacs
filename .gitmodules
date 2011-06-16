@@ -88,3 +88,6 @@
 [submodule "packages/yasnippet"]
 	path = packages/yasnippet
 	url = https://github.com/emacsmirror/yasnippet.git
+[submodule "packages/cucumber.el"]
+	path = packages/cucumber.el
+	url = https://github.com/michaelklishin/cucumber.el.git
