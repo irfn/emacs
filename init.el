@@ -77,12 +77,13 @@
 (require 'espresso-init)
 
 ;;Ruby 
+(require 'rvm-init)
 (require 'rsense-init)
 (require 'ri-emacs-init)
 (require 'rspec-init)
 (require 'textmate-init)
 (require 'rcodetools)
-(require 'rvm-init)
+
 (require 'rinari-init)
 (require 'haml-init)
 
