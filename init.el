@@ -24,7 +24,8 @@
 			(car (my-settings-for "paths")) ":")) exec-path))
 
 (require 'maxframe)
-(add-hook 'window-setup-hook 'maximize-frame t)
+
+(add-hook 'window-setup-hook 'x-maximize-frame t)
 
 (autoload 'mode-compile "mode-compile"
    "Command to compile current buffer file based on the major mode" t)
@@ -83,7 +84,7 @@
 (require 'rspec-init)
 (require 'textmate-init)
 (require 'rcodetools)
-
+(require 'cucumber-init)
 (require 'rinari-init)
 (require 'haml-init)
 
