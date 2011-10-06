@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-%x[git submodule init]
-puts  "init submodule"
-%x[git submodule update]
-puts  "update submodule"
-

@@ -1,5 +1,0 @@
-(add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
-(require 'yasnippet)
-(yas/load-directory yas/snippet-dirs)
-(yas/global-mode)
-(provide 'yas-init)

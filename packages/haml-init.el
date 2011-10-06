@@ -1,5 +1,0 @@
-(load-file  "~/.emacs.d/packages/haml-mode.el")
-(load-file  "~/.emacs.d/packages/sass-mode.el")
-(add-to-list 'auto-mode-alist '("\\.html.haml$" . haml-mode))
-(add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
-(provide 'haml-init)
