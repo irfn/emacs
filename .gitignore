@@ -9,3 +9,5 @@ url/*
 auto-save-list
 ac-comphist.dat
 *.before_ecb_2.*
+tramp
+.smex-items

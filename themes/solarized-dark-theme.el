@@ -331,4 +331,5 @@ in order to expand or compress the tonal range displayed."
        (apply 'custom-theme-set-faces ',theme-name ',theme-faces)
        (provide-theme ',theme-name))))
 
-(provide 'solarized-definitions)
+(create-solarized-theme dark)
+(provide 'solarized-dark)
