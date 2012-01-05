@@ -11,3 +11,4 @@ ac-comphist.dat
 *.before_ecb_2.*
 tramp
 .smex-items
+eshell

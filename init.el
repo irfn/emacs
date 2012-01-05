@@ -3,17 +3,21 @@
 
 
 (require 'marmalade)
-(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Vagrantfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("config.ru" . ruby-mode))
+(require 'nginx-mode)
+(require 'project-mode)
+(require 'campfire)
+(require 'rvm)
+(require 'rspec-mode)
 
-(setq *textmate-gf-exclude*
-  "/\\.|vendor|fixtures|tmp|log|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc|\\.elc|\\.jar|\\.class")
-(setq rinari-tags-file-name "TAGS")
+
+(autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
 (load custom-file 'noerror)
+(line-number-mode)
 (linum-mode)
 (highline-mode)
+(cua-mode t)
+(yas/global-mode 1) 
 (set-face-background 'highline-face "#08252F")
+(menu-bar-mode t)
