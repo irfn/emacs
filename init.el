@@ -27,9 +27,22 @@
 (require 'gtags)
 (require 'slim-mode)
 (require 'yaml-mode)
+(require 'auto-complete-config)
+(require 'key-bindings)
+(require 'duplicate-line)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4.20110207/dict")
 
+(setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
+(add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols)))
+(add-hook 'auto-complete-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-filename)))
+(global-auto-complete-mode t)
+(set-face-background 'ac-candidate-face "lightgray")
+(set-face-underline 'ac-candidate-face "darkgray")
+(set-face-background 'ac-selection-face "steelblue")
+(setq ac-auto-start nil)
+(setq ac-dwim t)
+(auto-complete-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
