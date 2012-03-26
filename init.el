@@ -24,12 +24,13 @@
 (require 'campfire)
 (require 'rvm)
 (require 'rspec-mode)
-(require 'gtags)
 (require 'slim-mode)
 (require 'yaml-mode)
 (require 'auto-complete-config)
 (require 'key-bindings)
 (require 'duplicate-line)
+
+
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4.20110207/dict")
 
 (setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
@@ -45,6 +46,23 @@
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
+(autoload 'gtags-mode "gtags" "" t)
+
+(add-hook 'ruby-mode-hook (lambda () 
+  (gtags-mode 1)))
+
+(defun gtags-root-dir ()
+  "Returns GTAGS root directory or nil if doesn't exist."
+  (with-temp-buffer
+    (if (zerop (call-process "global" nil t nil "-pr"))
+        (buffer-substring (point-min) (1- (point-max)))
+      nil)))
+(defun gtags-update ()
+  "Make GTAGS incremental update"
+  (call-process "global" nil nil nil "-u"))
+(defun gtags-update-hook ()
+  (when (gtags-root-dir)
+    (gtags-update)))
 
 (load custom-file 'noerror)
 (line-number-mode)
