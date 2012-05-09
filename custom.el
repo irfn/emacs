@@ -29,6 +29,7 @@
  '(smex-save-file "~/.emacs.d/.smex-items")
  '(standard-indent 2)
  '(tab-width 2)
+ '(wg-prefix-key (kbd "C-c w"))
  '(yas/global-mode t nil (yasnippet))
  '(yas/root-directory "~/.snippets/" nil (yasnippet)))
 (custom-set-faces

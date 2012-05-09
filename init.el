@@ -18,6 +18,13 @@
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-js starter-kit-ruby undo-tree yaml-mode yasnippet rinari full-ack workgroups)
+  "A list of packages to ensure are installed at launch.")
+
+;;(dolist (p my-packages)
+;;  (when (not (package-installed p))
+;;    (package-install p)))
+
 (require 'marmalade)
 (require 'nginx-mode)
 (require 'project-mode)
@@ -27,8 +34,10 @@
 (require 'slim-mode)
 (require 'yaml-mode)
 (require 'auto-complete-config)
+(require 'workgroups)
 (require 'key-bindings)
 (require 'duplicate-line)
+(require 'brightscript-mode)
 
 
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4.20110207/dict")
@@ -43,9 +52,10 @@
 (setq ac-auto-start nil)
 (setq ac-dwim t)
 (auto-complete-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
+(add-to-list 'auto-mode-alist '("\\.brs$" . brightscript-mode))
 (autoload 'gtags-mode "gtags" "" t)
 
 (add-hook 'ruby-mode-hook (lambda () 

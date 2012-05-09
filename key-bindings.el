@@ -23,6 +23,6 @@
 (global-set-key (kbd "M-.") 'gtags-find-tag)   ; find a tag, also M-.
 (global-set-key (kbd "M-,") 'gtags-find-rtag)  ; reverse tag
 (global-set-key (kbd "M-:") 'gtags-find-symbol)  
-(global-set-key (kbd "M-?") 'gtags-find-with-grep)  
+(global-set-key (kbd "M-?") 'gtags-find-with-grep) 
 
 (provide 'key-bindings)
