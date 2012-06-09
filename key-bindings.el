@@ -6,6 +6,7 @@
 
 (global-set-key (kbd "\C-cd") 'duplicate-line)
 
+
 (define-key ac-completing-map "\M-n" 'ac-next)
 (define-key ac-completing-map "\M-p" 'ac-previous)
 (define-key ac-mode-map (kbd "\M-/") 'auto-complete) 
@@ -19,6 +20,7 @@
 (global-set-key "\C-cy" 'browse-kill-ring)
 
 (global-set-key (kbd "ESC M-a") 'ack)
+(global-set-key (kbd "ESC M-s") 'sr-speedbar-toggle)
 
 (global-set-key (kbd "M-.") 'gtags-find-tag)   ; find a tag, also M-.
 (global-set-key (kbd "M-,") 'gtags-find-rtag)  ; reverse tag

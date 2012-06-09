@@ -35,6 +35,7 @@
 (require 'yaml-mode)
 (require 'auto-complete-config)
 (require 'workgroups)
+(require 'sr-speedbar)
 (require 'key-bindings)
 (require 'duplicate-line)
 (require 'brightscript-mode)
@@ -82,3 +83,6 @@
 (yas/global-mode 1) 
 (set-face-background 'highline-face "#08252F")
 (menu-bar-mode t)
+(load-theme 'zen-mod)
+(windmove-default-keybindings)
+
