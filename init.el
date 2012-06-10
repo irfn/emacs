@@ -31,6 +31,7 @@
 (require 'campfire)
 (require 'rvm)
 (require 'rspec-mode)
+(require 'ruby-tools)
 (require 'slim-mode)
 (require 'yaml-mode)
 (require 'auto-complete-config)
