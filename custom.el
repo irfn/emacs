@@ -13,13 +13,14 @@
  '(custom-theme-directory "~/.emacs.d/themes/")
  '(exec-path (quote ("/usr/local/bin" "/usr/local/sbin" "/usr/bin" "/usr/sbin" "/Applications/Emacs.app/Contents/MacOS/bin" "/bin" "/sbin")))
  '(fancy-splash-image nil)
+ '(fringe-mode (quote (4 . 4)) nil (fringe))
  '(global-linum-mode t)
  '(gnus-completing-read-function (quote gnus-ido-completing-read))
  '(ido-default-file-method (quote raise-frame))
  '(ido-ignore-buffers (quote ("\\` " "*GTAGS")))
  '(ido-rotate-file-list-default t)
  '(ido-use-filename-at-point nil)
- '(linum-format "%4d")
+ '(linum-format "%3d")
  '(make-backup-files nil)
  '(rspec-rake-command "rake")
  '(rspec-spec-command "rspec")
@@ -40,7 +41,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(hl-line ((t (:background "#4D4C4C")))))
 
 (c-mode)
 (c-toggle-hungry-state)

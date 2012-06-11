@@ -40,7 +40,7 @@
 (require 'key-bindings)
 (require 'duplicate-line)
 (require 'brightscript-mode)
-
+(require 'linum-off)
 
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4.20110207/dict")
 
@@ -77,12 +77,16 @@
     (gtags-update)))
 
 (load custom-file 'noerror)
+
+(add-to-list 'linum-disabled-modes-list '(speedbar-mode))
+
+(add-to-list 'speedbar-frame-parameters '(left-fringe . 0))
+
 (line-number-mode)
 (linum-mode)
-(highline-mode)
+(hl-line-mode)
 (cua-mode t)
-(yas/global-mode 1) 
-(set-face-background 'highline-face "#08252F")
+(yas/global-mode 1)
 (menu-bar-mode t)
 (load-theme 'zen-mod)
 (windmove-default-keybindings)
