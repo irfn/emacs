@@ -5,14 +5,8 @@
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-js starter-kit-ruby undo-tree yaml-mode yasnippet rinari full-ack workgroups)
-  "A list of packages to ensure are installed at launch.")
-
-;;(dolist (p my-packages)
-;;  (when (not (package-installed p))
-;;    (package-install p)))
-
 (require 'marmalade)
+(require 'my-packages)
 (require 'nginx-mode)
 (require 'project-mode)
 (require 'campfire)
@@ -34,6 +28,6 @@
 (require 'global-modes)
 
 (load custom-file 'noerror)
-(load-theme 'zen-mod)
+(load-theme 'zen-and-art)
 
 
