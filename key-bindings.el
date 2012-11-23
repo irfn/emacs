@@ -22,9 +22,14 @@
 (global-set-key (kbd "ESC M-a") 'ack)
 (global-set-key (kbd "ESC M-s") 'sr-speedbar-toggle)
 
-(global-set-key (kbd "M-.") 'gtags-find-tag)   ; find a tag, also M-.
-(global-set-key (kbd "M-,") 'gtags-find-rtag)  ; reverse tag
-(global-set-key (kbd "M-:") 'gtags-find-symbol)  
-(global-set-key (kbd "M-?") 'gtags-find-with-grep) 
+(global-set-key (kbd "\C-@") 'er/expand-region)
 
+
+
+(global-set-key [(control f5)] 'highlight-symbol-at-point)
+(global-set-key [f5] 'highlight-symbol-next)
+(global-set-key [(shift f5)] 'highlight-symbol-prev)
+
+(setq wg-prefix-key (kbd "\C-c ESC"))
+(grep-a-lot-setup-keys)
 (provide 'key-bindings)

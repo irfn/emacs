@@ -9,6 +9,6 @@
 (set-face-background 'ac-selection-face "steelblue")
 
 (add-to-list 'linum-disabled-modes-list '(speedbar-mode))
-(add-to-list 'speedbar-frame-parameters '(left-fringe . 0))
+
 
 (provide 'defaults)

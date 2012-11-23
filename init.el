@@ -4,6 +4,9 @@
 
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (setq exec-path (append exec-path '("/usr/local/bin")))
+;; Setting rbenv path
+(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
+(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
 
 (require 'marmalade)
 (require 'my-packages)
@@ -17,15 +20,20 @@
 (require 'yaml-mode)
 (require 'auto-complete-config)
 (require 'workgroups)
+(require 'grep-a-lot)
 (require 'sr-speedbar)
 (require 'key-bindings)
 (require 'duplicate-line)
 (require 'brightscript-mode)
+(require 'sws-mode)
+(require 'jade-mode)
 (require 'linum-off)
 (require 'auto-modes-list)
 (require 'hooks)
 (require 'defaults)
 (require 'global-modes)
+(require 'csv-mode)
+(require 'ecb-workdirs)
 
 (load custom-file 'noerror)
 (load-theme 'zen-and-art)

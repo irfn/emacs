@@ -2,7 +2,5 @@
 (add-hook 'auto-complete-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-filename)))
 
 
-(add-hook 'ruby-mode-hook (lambda () 
-  (gtags-mode 1)))
 
 (provide 'hooks)
