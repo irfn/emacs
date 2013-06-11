@@ -15,7 +15,7 @@
 
 
 (setq *textmate-gf-exclude*
-      "/\\.|vendor|fixtures|tmp|log|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc|\\.elc|\\.jar|\\.class")
+      "/\\.|vendor|fixtures|tmp|log|cassettes|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc|\\.elc|\\.jar|\\.class")
 (setq rinari-tags-file-name "TAGS")
 
 (defun rails-project ()

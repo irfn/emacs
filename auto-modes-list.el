@@ -18,6 +18,7 @@
 (add-to-list 'auto-mode-alist '("Guardfile\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.thor\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Thorfile\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.slim'" . slim-mode))
 
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
 

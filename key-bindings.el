@@ -31,5 +31,7 @@
 (global-set-key [(shift f5)] 'highlight-symbol-prev)
 
 (setq wg-prefix-key (kbd "\C-c ESC"))
+(setq rspec-key-command-prefix (kbd "C-c ,"))
+
 (grep-a-lot-setup-keys)
 (provide 'key-bindings)
