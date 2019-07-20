@@ -1,0 +1,6 @@
+.cache/
+cider-history
+elpa/
+recentf
+transient/
+projectile-bookmarks.eld
