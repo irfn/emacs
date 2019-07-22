@@ -1,0 +1,13 @@
+* Generic
+** DONE Magit
+** DONE Projectile
+*** Open projects
+*** Open File in project
+*** Search for text (rg)
+* Golang
+** Goto Definition
+* Ruby
+** TODO Rails
+* Clojure
+** Cider
+* TODO Dockerfile

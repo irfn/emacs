@@ -11,8 +11,8 @@
 
 (setq emacs-load-start-time (current-time))
 
+;; Restore back
 (add-hook 'after-init-hook #'(lambda ()
-                               ;; restore after startup
                                (setq gc-cons-threshold best-gc-cons-threshold)))
 
 (tool-bar-mode -1)
@@ -98,9 +98,6 @@
 (use-package rg
   :ensure t)
 
-(use-package rg
-  :ensure t)
-
 (use-package markdown-mode
   :ensure t
   :mode (("README\\.md\\'" . gfm-mode)
@@ -118,7 +115,7 @@
 ;;(require 'lang-python)
 (require 'lang-go)
 (require 'lang-clojure)
-
+(require 'lang-rust)
 (when (require 'time-date nil t)
   (message "Emacs startup time: %d seconds."
            (time-to-seconds (time-since emacs-load-start-time))))
