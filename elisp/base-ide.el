@@ -38,8 +38,8 @@
   :ensure t)
 
 (use-package winner
-  :defer t)
-
+  :ensure t
+  )
 (use-package yasnippet
   :ensure t
   :defer t)
@@ -65,8 +65,7 @@
             ;; disable inline documentation
             (setq lsp-ui-sideline-enable nil)
             ;; disable showing docs on hover at the top of the window
-            (setq lsp-ui-doc-enable nil))
-  )
+            (setq lsp-ui-doc-enable nil)))
 
 (use-package company-lsp
   :ensure t
@@ -74,5 +73,11 @@
 
 (use-package flycheck
   :ensure t)
+
+(use-package hi-lock
+  :bind (("M-RET h l" . highlight-lines-matching-regexp)
+         ("M-RET h r" . highlight-regexp)
+         ("M-RET h w" . highlight-phrase)
+	 ("M-RET h 0" . hi-lock-unface-buffer)))
 
 (provide 'base-ide)

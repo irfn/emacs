@@ -1,4 +1,5 @@
 ;; -*- coding: utf-8; lexical-binding: t; -*-
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (push (expand-file-name "~/.emacs.d/elisp") load-path)
 
@@ -61,61 +62,22 @@
 ;;   (setq auto-package-update-hide-results t)
 ;;   (auto-package-update-maybe))
 
-(use-package helm
-  :ensure t
-  :bind (("M-x" . helm-M-x)
-         ("M-<f5>" . helm-find-files)
-         ([f10] . helm-buffers-list)
-         ([S-f10] . helm-recentf)))
-
-;; Project management
-(use-package projectile
-  :ensure t
-  :init
-  :delight '(:eval (concat " " (projectile-project-name)))
-  (setq projectile-completion-system 'helm)
-  :config
-  (projectile-mode))
-
-(use-package helm-projectile
-  :ensure t
-  :bind (("s-p" . helm-projectile)
-	 ("s-t" . projectile-find-file)
-	 ))
-
-(use-package magit
-  :ensure t)
-
-(use-package org
-  :ensure t)
-
-(use-package suscolors-theme
-  :ensure t)
-
-(use-package winner
-  :defer t)
-
-(use-package rg
-  :ensure t)
-
-(use-package markdown-mode
-  :ensure t
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
-
-
-
-(load-theme 'suscolors t)
-
 (set-register ?i (cons 'file "~/.emacs.d/init.el"))
+
+(require 'base-ide)
+(require 'base-editor)
 (load custom-file t)
 
+(use-package kubernetes
+  :ensure t)
+
+
 ;;(require 'lang-python)
+(require 'docs-editor)
 (require 'lang-go)
 (require 'lang-clojure)
 (require 'lang-rust)
+(require 'lang-elixir)
 (when (require 'time-date nil t)
   (message "Emacs startup time: %d seconds."
            (time-to-seconds (time-since emacs-load-start-time))))

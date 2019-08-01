@@ -8,7 +8,7 @@
     ("72559f34f255a17b7055687c1593ae1dbbd3c5b61b56d0ca96f9468ca228b96c" default)))
  '(package-selected-packages
    (quote
-    (racer cargo flymake-rust rust-mode go-eldoc flymake-go company-go go-mode use-package suscolors-theme magit helm-projectile)))
+    (go-snippets alchemist racer cargo flymake-rust rust-mode go-eldoc flymake-go company-go go-mode use-package suscolors-theme magit helm-projectile)))
  '(with-editor-emacsclient-executable nil)
  '(with-editor-shell-command-use-emacsclient nil))
 (custom-set-faces
