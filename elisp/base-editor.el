@@ -16,4 +16,15 @@
 
 (global-set-key (kbd "s-/") 'comment-region)
 (global-set-key (kbd "M-s-÷") 'uncomment-region)
+
+(use-package yaml-mode
+  :ensure t
+  :init (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+
+(use-package indent-tools
+  :ensure t)
+
+(use-package flymake-yaml
+  :ensure t
+  :init (add-hook 'yaml-mode-hook 'flymake-yaml-load))
 (provide 'base-editor)

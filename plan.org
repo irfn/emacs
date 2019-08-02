@@ -9,9 +9,12 @@
 * Golang
 ** DONE Gopls
 ** Goto Definition
-* Ruby
-** TODO Rails
+* TODO Ruby
+* TODO Rails
 * Clojure
 ** Cider
 * TODO Dockerfile
-* TODO yaml
+* DONE yaml
+* Hydra
+- https://github.com/abo-abo/hydra/
+* TODO Indenting.
