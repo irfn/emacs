@@ -3,8 +3,11 @@
 ** DONE Projectile
 *** Open projects
 *** Open File in project
-*** Search for text (rg)
+*** DONE Search for text (rg)
+** DONE Linum
+*** DONE Suppress Linum in org mode
 * Golang
+** DONE Gopls
 ** Goto Definition
 * Ruby
 ** TODO Rails

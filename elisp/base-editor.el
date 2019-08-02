@@ -12,5 +12,8 @@
   :ensure t)
 
 (load-theme 'gruvbox-dark-soft t)
+(global-linum-mode)
 
+(global-set-key (kbd "s-/") 'comment-region)
+(global-set-key (kbd "M-s-÷") 'uncomment-region)
 (provide 'base-editor)
