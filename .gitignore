@@ -3,4 +3,6 @@ cider-history
 elpa/
 recentf
 transient/
+eshell/
+.lsp-session*
 projectile-bookmarks.eld
