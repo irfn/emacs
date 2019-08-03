@@ -6,7 +6,14 @@
 
 (use-package org
   :ensure t
+  :config (progn
+	    (setq org-todo-keywords (quote ((sequence "DISCUSS" "TODO" "IN-PROGRESS" "DONE"))))
+	    (setq org-bullets-bullet-list '("◉" "○" "⌗" "◆")))
   :init (add-hook 'org-mode-hook 'my-inhibit-global-linum-mode))
+
+(use-package org-present
+  :ensure t
+  :bind (("<f8>" . org-present)))
 
 (use-package markdown-mode
   :ensure t

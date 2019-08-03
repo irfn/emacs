@@ -78,6 +78,9 @@
 (require 'lang-clojure)
 (require 'lang-rust)
 (require 'lang-elixir)
+
+;; tools
+(require 'tools-tf)
 (when (require 'time-date nil t)
   (message "Emacs startup time: %d seconds."
            (time-to-seconds (time-since emacs-load-start-time))))

@@ -1,3 +1,6 @@
+
+* Deferred
+org-brain
 * Generic
 ** DONE Magit
 ** DONE Projectile
@@ -6,15 +9,35 @@
 *** DONE Search for text (rg)
 ** DONE Linum
 *** DONE Suppress Linum in org mode
+** DONE org-present
+** TODO org-projectile
+** ggtags
+* Tools
+** DONE terraform
+** TODO Dockerfile
 * Golang
 ** DONE Gopls
 ** Goto Definition
 * TODO Ruby
-* TODO Rails
+* TODO [#B] Rails
 * Clojure
-** Cider
-* TODO Dockerfile
+** TODO Cider
 * DONE yaml
 * Hydra
 - https://github.com/abo-abo/hydra/
 * TODO Indenting.
+
+clojure-snippets
+elixir-yasnippets
+
+helm-org-rifle
+idle-org-agenda
+
+ob-elixir
+ob-go
+
+org-caldav
+org-kanban
+org-wunderlist
+ox-odt
+powerline

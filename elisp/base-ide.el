@@ -23,7 +23,7 @@
 (use-package helm-projectile
   :ensure t
   :bind (("s-p" . helm-projectile-switch-project)
-	 ("s-t" . projectile-find-file)
+	 ("s-t" . helm-projectile-find-file)
 	 ))
 
 (use-package rg

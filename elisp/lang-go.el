@@ -48,6 +48,12 @@
 (use-package go-snippets
   :ensure t)
 
+(use-package go-guru
+  :ensure t)
+
+(use-package go-eldoc
+  :ensure t)
+
 (defun setup-go-mode-compile ()
   ; Customize compile command to run go build
   (if (not (string-match "go" compile-command))
