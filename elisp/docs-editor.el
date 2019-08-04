@@ -15,6 +15,29 @@
   :ensure t
   :bind (("<f8>" . org-present)))
 
+(defun ob-fix-inline-images ()
+  (when org-inline-image-overlays
+    (org-redisplay-inline-images)))
+
+(defun ob-do-load-langs ()
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((ruby . t))))
+
+(defun ob-confirm-babel-evaluate (lang body)
+  (not (member lang '("python" "go" "ruby" "clojure" "sh"))))
+
+
+
+(use-package ob
+  :defer t
+  :config (setq org-confirm-babel-evaluate 'ob-confirm-babel-evaluate)
+  :init
+  (progn
+    (add-hook 'org-mode-hook 'ob-do-load-langs)
+    ;; Fix redisplay of inline images after a code block evaluation.
+    (add-hook 'org-babel-after-execute-hook 'ob-fix-inline-images)))
+
 (use-package markdown-mode
   :ensure t
   :mode (("README\\.md\\'" . gfm-mode)
