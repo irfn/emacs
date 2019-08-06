@@ -42,7 +42,12 @@
   )
 (use-package yasnippet
   :ensure t
-  :defer t)
+  :defer t
+  :init (yas-global-mode t))
+
+(use-package doom-snippets
+  :load-path "~/dev/etc/doom-snippets"
+  :after yasnippet)
 
 (use-package company
   :ensure t

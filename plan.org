@@ -1,7 +1,7 @@
 
-* Deferred
-org-brain
-* Generic
+#+PRIORITIES: 3 2 1
+
+* Generic IDE
 ** DONE Magit
 ** DONE Projectile
 *** Open projects
@@ -9,35 +9,45 @@ org-brain
 *** DONE Search for text (rg)
 ** DONE Linum
 *** DONE Suppress Linum in org mode
-** DONE org-present
+** TODO ggtags
+** DONE yaml
+
+* Org Mode
+** DONE Org Bullets
 ** TODO org-projectile
-** ggtags
+** DEFERED org-caldav
+** DEFERED org-kanban
+** TODO org-wunderlist
+** TODO idle-org-agenda
+** TODO org-agenda
+** DONE plantuml, ditaa
+** org-brain
+** helm-org-rifle
 * Tools
 ** DONE terraform
 ** TODO Dockerfile
+* Hydra
+- https://github.com/abo-abo/hydra/
+* powerline
+
 * Golang
 ** DONE Gopls
 ** Goto Definition
 * TODO Ruby
-* TODO [#B] Rails
+* TODO Rails
+* Elixir
+** ob-elixir
+** elixir-yasnippets
 * Clojure
 ** TODO Cider
-* DONE yaml
-* Hydra
-- https://github.com/abo-abo/hydra/
+** clojure-snippets
+
 * TODO Indenting.
+* Literate https://github.com/joodie/emacs-literal-config/blob/master/emacs.org
 
-clojure-snippets
-elixir-yasnippets
 
-helm-org-rifle
-idle-org-agenda
 
-ob-elixir
-ob-go
 
-org-caldav
-org-kanban
-org-wunderlist
-ox-odt
-powerline
+
+
+

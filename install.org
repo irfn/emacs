@@ -1,0 +1,6 @@
+#+TITLE:     Install dependencies
+#+AUTHOR:    Irfan Shah
+
+#+BEGIN_SRC sh
+brew install plantuml
+#+END_SRC
