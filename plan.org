@@ -42,6 +42,7 @@
 ** TODO Cider
 ** clojure-snippets
 
+** https://gitlab.com/nilenso/dotemacs/blob/master/init.el
 * TODO Indenting.
 * Literate https://github.com/joodie/emacs-literal-config/blob/master/emacs.org
 

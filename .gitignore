@@ -6,3 +6,4 @@ transient/
 eshell/
 .lsp-session*
 projectile-bookmarks.eld
+elisp

@@ -1,3 +1,10 @@
+#+TITLE:     Rust
+#+AUTHOR:    Irfan Shah
+
+* Rust
+#+Name: dump
+#+BEGIN_SRC elisp
+
 ;;rust-mode
 
 (use-package rust-mode
@@ -15,4 +22,9 @@
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
 (add-hook 'rust-mode-hook 'racer-mode)
 
-(provide 'lang-rust)
+#+END_SRC
+
+* Provide this so that it may be required
+#+BEGIN_SRC elisp
+(provide 'rust)
+#+END_SRC

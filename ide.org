@@ -1,8 +1,21 @@
+#+TITLE:     Core IDE
+#+AUTHOR:    Irfan Shah
+
+* Dump
+one block for now
+#+NAME: dump
+#+BEGIN_SRC elisp
 (use-package exec-path-from-shell
   :ensure t
   :init
   (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize)))
+
+(use-package smex
+  :ensure t
+  :config
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "s-x") 'smex))
 
 (use-package helm
   :ensure t
@@ -85,4 +98,12 @@
          ("M-RET h w" . highlight-phrase)
 	 ("M-RET h 0" . hi-lock-unface-buffer)))
 
-(provide 'base-ide)
+#+END_SRC
+
+
+* Provide this so that it may be required
+
+#+NAME: provide
+#+BEGIN_SRC elisp
+(provide 'ide)
+#+END_SRC

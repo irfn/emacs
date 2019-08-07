@@ -1,0 +1,74 @@
+#+TITLE:     Literate Emacs Configuration
+#+AUTHOR:    Irfan Shah
+
+* Literate Emacs configuration via org mode and babel
+
+  Using ~org-babel-load-file~ we loaded this file. The various embedded snippets are the emacs config.
+
+* Generic Config
+** Enable the use of common lisp
+ emacs lisp is not common lisp but can use cl libraries through this bridge.
+ #+NAME: common lisp
+ #+BEGIN_SRC elisp
+ (require 'cl)
+ #+END_SRC
+
+** Start emacs maximized
+Quite Obviously you want to start Maximized.
+
+#+NAME: maximized frame
+#+BEGIN_SRC elisp
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+#+END_SRC
+
+** Tune Emacs GC for faster startup.
+Temporarily set gc threshold to largest possible number so that there are no gc pauses during startup. Reset to a sane threshold via hook after the restart is done.
+#+NAME: gc settings
+#+BEGIN_SRC elisp
+(defvar best-gc-cons-threshold
+  4000000)
+(setq gc-cons-threshold most-positive-fixnum)
+
+;; Restore back
+(add-hook 'after-init-hook #'(lambda ()
+                               (setq gc-cons-threshold best-gc-cons-threshold)))
+#+END_SRC
+
+** Sane Defaults
+Sane default here
+#+NAME: sane
+#+BEGIN_SRC elisp
+(tool-bar-mode -1)
+;; Skip the default splash screen.
+(setq inhibit-startup-screen t)
+(setq delete-old-versions -1 )
+(setq ring-bell-function 'ignore )
+(setq coding-system-for-read 'utf-8 )
+(setq coding-system-for-write 'utf-8 )
+(setq initial-scratch-message "")
+(setq browse-url-browser-function 'browse-url-firefox)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
+#+END_SRC
+
+** Useful Miscellany
+
+ #+NAME misc
+ #+BEGIN_SRC elisp
+ (setq hostname (replace-regexp-in-string "\\(^[[:space:]\n]*\\|[[:space:]\n]*$\\)" "" (with-output-to-string (call-process "hostname" nil standard-output))))
+
+ (setq dotfiles-dir (file-name-directory
+                     (or (buffer-file-name) (file-chase-links load-file-name))))
+
+
+ (set-register ?i (cons 'file "~/.emacs.d/init.el"))
+ #+END_SRC
+
+
+
+* Provide this so that it may be required
+
+#+NAME: provide
+#+BEGIN_SRC elisp
+(provide 'config)
+#+END_SRC

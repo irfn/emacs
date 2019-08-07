@@ -1,3 +1,10 @@
+#+TITLE:     Go
+#+AUTHOR:    Irfan Shah
+
+* Go Mode
+#+Name: dump
+#+BEGIN_SRC elisp
+
 (use-package go-mode
   :ensure t
   :bind (
@@ -63,5 +70,10 @@
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet")))
 
-  
-(provide 'lang-go)
+#+END_SRC
+
+* Provide this so that it may be required
+
+#+BEGIN_SRC elisp
+(provide 'go)
+#+END_SRC

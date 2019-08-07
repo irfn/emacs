@@ -1,0 +1,18 @@
+#+TITLE:     Elixir
+#+AUTHOR:    Irfan Shah
+
+* Elixir
+#+Name: dump
+#+BEGIN_SRC elisp
+
+(use-package alchemist
+  :ensure t
+  :init
+  (setq alchemist-mix-command "/usr/local/bin/mix")
+  (setq alchemist-iex-program-name "/usr/local/bin/iex"))
+#+END_SRC
+
+* Provide this so that it may be required
+#+BEGIN_SRC elisp
+(provide 'elixir)
+#+END_SRC

@@ -1,3 +1,10 @@
+#+TITLE:     Python
+#+AUTHOR:    Irfan Shah
+
+* Python
+#+Name: dump
+#+BEGIN_SRC elisp
+
 ;;; package --- python configs
 ;;; Commentary:
 ;;; Contains my python configs
@@ -62,3 +69,5 @@
 
 (provide 'lang-python)
 ;;; base-python.el ends here
+
+#+END_SRC

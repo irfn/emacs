@@ -1,3 +1,7 @@
+* Docs
+#+Name: dump
+#+BEGIN_SRC elisp
+
 (defun my-inhibit-global-linum-mode ()
   "Counter-act `global-linum-mode'."
   (add-hook 'after-change-major-mode-hook
@@ -5,7 +9,6 @@
 	    :append :local))
 
 (use-package org
-  :ensure t
   :config (progn
 	    (setq org-todo-keywords (quote ((sequence "DISCUSS" "TODO" "IN-PROGRESS" "REVIEW" "DELEGATED" "DEFERED" "DONE")))))
   :init (progn
@@ -25,10 +28,11 @@
    'org-babel-load-languages
    '((ruby . t)
      (ditaa . t)
-     (plantuml . t))))
+     (plantuml . t)
+     (elisp . t))))
 
 (defun ob-confirm-babel-evaluate (lang body)
-  (not (member lang '("python" "go" "ruby" "clojure" "sh" "ditaa" "plantuml"))))
+  (not (member lang '("python" "go" "ruby" "clojure" "sh" "ditaa" "plantuml" "elisp"))))
 
 (use-package ob
   :defer t
@@ -41,7 +45,7 @@
 
 (use-package company-emoji
   :ensure t
-  :init (add-to-list 'company-backends 'company-emoji))
+  :init  (set (make-local-variable 'company-backends) '(company-go)))
 
 (use-package emoji-cheat-sheet-plus
   :ensure t
@@ -70,4 +74,6 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
-(provide 'docs-editor)
+(provide 'editor)
+
+#+END_SRC
