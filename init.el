@@ -23,6 +23,7 @@
 (tangle-file "config.org")
 (tangle-file "ide.org")
 (tangle-file "editor.org")
+(tangle-file "docs.org")
 (tangle-file "tools.org")
 (tangle-file "go.org")
 (tangle-file "clojure.org")
@@ -33,6 +34,8 @@
 (require 'config)
 (require 'ide)
 (require 'editor)
+(load custom-file t)
+(require 'docs)
 (require 'tools)
 
 (require 'go)

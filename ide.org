@@ -1,22 +1,20 @@
 #+TITLE:     Core IDE
 #+AUTHOR:    Irfan Shah
 
-* Dump
-one block for now
-#+NAME: dump
+* Exec Path
+This is to ensure that shell and Emacs can share ~PATH~ env var
 #+BEGIN_SRC elisp
 (use-package exec-path-from-shell
   :ensure t
   :init
   (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize)))
+#+END_SRC
 
-(use-package smex
-  :ensure t
-  :config
-  (global-set-key (kbd "M-x") 'smex)
-  (global-set-key (kbd "s-x") 'smex))
+* Project Management
+** Helm
 
+#+BEGIN_SRC elisp
 (use-package helm
   :ensure t
   :bind (("M-x" . helm-M-x)
@@ -24,7 +22,11 @@ one block for now
          ([f10] . helm-buffers-list)
          ([S-f10] . helm-recentf)))
 
-;; Project management
+
+#+END_SRC
+
+** Projectile
+#+BEGIN_SRC elisp
 (use-package projectile
   :ensure t
   :init
@@ -38,7 +40,11 @@ one block for now
   :bind (("s-p" . helm-projectile-switch-project)
 	 ("s-t" . helm-projectile-find-file)
 	 ))
+#+END_SRC
 
+** Search in a project
+
+#+BEGIN_SRC elisp
 (use-package rg
   :ensure t)
 
@@ -46,13 +52,32 @@ one block for now
   :ensure t
   :bind (("M-RET /" . helm-projectile-rg)
 	 ))
+#+END_SRC
 
+** Indispensable git companion
+#+BEGIN_SRC elisp
 (use-package magit
   :ensure t)
+#+END_SRC
 
+** M-x Alternate via ido
+
+#+BEGIN_SRC elisp
+(use-package smex
+  :ensure t
+  :config
+  (global-set-key (kbd "s-x") 'smex))
+#+END_SRC
+
+** Window Management
+#+BEGIN_SRC elisp
 (use-package winner
   :ensure t
   )
+#+END_SRC
+
+** Snippets
+#+BEGIN_SRC elisp
 (use-package yasnippet
   :ensure t
   :defer t
@@ -61,7 +86,12 @@ one block for now
 (use-package doom-snippets
   :load-path "~/dev/etc/doom-snippets"
   :after yasnippet)
+#+END_SRC
 
+* Completions
+
+** Company Mode
+#+BEGIN_SRC elisp
 (use-package company
   :ensure t
   :config (progn
@@ -70,6 +100,10 @@ one block for now
             (setq company-tooltip-align-annotations t)
             ))
 
+#+END_SRC
+
+** LSP
+#+BEGIN_SRC elisp
 (use-package lsp-mode
   :ensure t
   ;; :custom (lsp-gopls-server-args '("-debug" "127.0.0.1:0"))
@@ -89,6 +123,12 @@ one block for now
   :ensure t
   :commands company-lsp)
 
+
+#+END_SRC
+
+** Syntax checker & Highlighting
+
+#+BEGIN_SRC elisp
 (use-package flycheck
   :ensure t)
 
@@ -99,7 +139,6 @@ one block for now
 	 ("M-RET h 0" . hi-lock-unface-buffer)))
 
 #+END_SRC
-
 
 * Provide this so that it may be required
 

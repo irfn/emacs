@@ -11,7 +11,7 @@
 *** DONE Suppress Linum in org mode
 ** TODO ggtags
 ** DONE yaml
-
+* IN-PROGRESS Literate https://github.com/joodie/emacs-literal-config/blob/master/emacs.org
 * Org Mode
 ** DONE Org Bullets
 ** TODO org-projectile
@@ -44,11 +44,3 @@
 
 ** https://gitlab.com/nilenso/dotemacs/blob/master/init.el
 * TODO Indenting.
-* Literate https://github.com/joodie/emacs-literal-config/blob/master/emacs.org
-
-
-
-
-
-
-

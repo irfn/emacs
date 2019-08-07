@@ -1,7 +1,9 @@
-* Docs
-#+Name: dump
-#+BEGIN_SRC elisp
+#+TITLE:     Docs
+#+AUTHOR:    Irfan Shah
 
+* Org Mode
+
+#+BEGIN_SRC elisp
 (defun my-inhibit-global-linum-mode ()
   "Counter-act `global-linum-mode'."
   (add-hook 'after-change-major-mode-hook
@@ -15,10 +17,23 @@
 		  (add-hook 'org-mode-hook 'my-inhibit-global-linum-mode)
 		  (add-hook 'org-mode-hook 'flyspell-mode)))
 
+(use-package org-bullets
+  :ensure t
+  :config (setq org-bullets-bullet-list '("◉" "⌘" "○" "⌗"))
+  :init (add-hook 'org-mode-hook 'org-bullets-mode))
+
+#+END_SRC
+
+* Org Based Presentations
+#+BEGIN_SRC elisp
 (use-package org-present
   :ensure t
   :bind (("<f8>" . org-present)))
+#+END_SRC
 
+* Org Babel
+
+#+BEGIN_SRC elisp
 (defun ob-fix-inline-images ()
   (when org-inline-image-overlays
     (org-redisplay-inline-images)))
@@ -42,6 +57,32 @@
     (add-hook 'org-mode-hook 'ob-do-load-langs)
     ;; Fix redisplay of inline images after a code block evaluation.
     (add-hook 'org-babel-after-execute-hook 'ob-fix-inline-images)))
+#+END_SRC
+* Plantuml
+#+BEGIN_SRC elisp
+
+(use-package plantuml-mode
+  :ensure t
+  :init (setq org-plantuml-jar-path
+	      (expand-file-name "/usr/local/Cellar/plantuml/1.2019.8/libexec/plantuml.jar"))
+)
+
+
+#+END_SRC
+
+* Markdown
+#+BEGIN_SRC elisp
+(use-package markdown-mode
+  :ensure t
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+#+END_SRC
+
+* Emoji in org and markdown
+#+Name: dump
+#+BEGIN_SRC elisp
 
 (use-package company-emoji
   :ensure t
@@ -55,25 +96,10 @@
     ;; enabled emoji in buffer
     (add-hook 'org-mode-hook 'emoji-cheat-sheet-plus-display-mode)
     (add-hook 'markdown-mode-hook 'emoji-cheat-sheet-plus-display-mode)))
+#+END_SRC
 
-(use-package org-bullets
-  :ensure t
-  :config (setq org-bullets-bullet-list '("◉" "⌘" "○" "⌗"))
-  :init (add-hook 'org-mode-hook 'org-bullets-mode))
-
-(use-package plantuml-mode
-  :ensure t
-  :init (setq org-plantuml-jar-path
-	      (expand-file-name "/usr/local/Cellar/plantuml/1.2019.8/libexec/plantuml.jar"))
-)
-
-(use-package markdown-mode
-  :ensure t
-  :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "multimarkdown"))
-
-(provide 'editor)
-
+* Provide this so that it may be required
+#+NAME: provide
+#+BEGIN_SRC elisp
+(provide 'docs)
 #+END_SRC

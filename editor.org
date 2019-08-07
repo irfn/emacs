@@ -1,12 +1,8 @@
 #+TITLE:     Core Editor bits
 #+AUTHOR:    Irfan Shah
-
-* Dump
-
-#+Name: dump
+* Editor Config
+** Indents and spacing
 #+BEGIN_SRC elisp
-;; set a default font
-;; Use spaces instead of tabs
 (setq tab-width 2)
 (setq js-indent-level 2)
 (setq css-indent-offset 2)
@@ -16,15 +12,29 @@
 (setq-default tab-width 2)
 (setq-default c-basic-indent 2)
 
+(use-package indent-tools
+  :ensure t)
+
+#+END_SRC
+** Editing
+#+BEGIN_SRC elisp
+(global-linum-mode)
+
+(global-set-key (kbd "s-/") 'comment-region)
+(global-set-key (kbd "M-s-÷") 'uncomment-region)
+#+END_SRC
+** Reload from disk
+#+BEGIN_SRC elisp
 ;; Automatically reload files when they change on disk
 (global-auto-revert-mode 1)
 (setq auto-revert-verbose nil)
+#+END_SRC
 
+** Edit Behaviours
 
+#+BEGIN_SRC elisp
 ;; Type over selected text
 (delete-selection-mode 1)
-
-
 ;; Kill whole line
 (global-set-key (kbd "s-<backspace>") 'kill-whole-line)
 
@@ -41,10 +51,15 @@
 
 ;; Remove trailing whitespace before saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
+#+END_SRC
+* Font
+#+BEGIN_SRC elisp
 (when (member "FuraCode Nerd Font" (font-family-list))
   (set-face-attribute 'default nil :font "FuraCode Nerd Font-15"))
+#+END_SRC
 
+* Themes
+#+BEGIN_SRC elisp
 (use-package suscolors-theme
   :ensure t)
 
@@ -58,17 +73,13 @@
   :ensure t)
 
 (load-theme 'dracula t)
-(global-linum-mode)
-
-(global-set-key (kbd "s-/") 'comment-region)
-(global-set-key (kbd "M-s-÷") 'uncomment-region)
-
+#+END_SRC
+* Misc
+** Yaml
+#+BEGIN_SRC elisp
 (use-package yaml-mode
   :ensure t
   :init (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
-
-(use-package indent-tools
-  :ensure t)
 
 (use-package flymake-yaml
   :ensure t
@@ -76,7 +87,6 @@
 
 (load custom-file t)
 #+END_SRC
-
 
 * Provide this so that it may be required
 
