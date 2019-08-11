@@ -49,7 +49,7 @@ Sane default here
 
 ** Useful Miscellany
 
- #+NAME misc
+ #+NAME: misc
  #+BEGIN_SRC emacs-lisp
  (setq hostname (replace-regexp-in-string "\\(^[[:space:]\n]*\\|[[:space:]\n]*$\\)" "" (with-output-to-string (call-process "hostname" nil standard-output))))
 
