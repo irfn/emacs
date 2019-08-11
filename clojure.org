@@ -3,7 +3,7 @@
 
 * Clojure
 #+Name: dump
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 
 
 (use-package clojure-mode
@@ -104,6 +104,6 @@
 
 
 * Provide this so that it may be required
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (provide 'clojure)
 #+END_SRC

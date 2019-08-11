@@ -3,7 +3,7 @@
 
 * Python
 #+Name: dump
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 
 ;;; package --- python configs
 ;;; Commentary:

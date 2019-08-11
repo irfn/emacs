@@ -2,30 +2,9 @@
 #+AUTHOR:    Irfan Shah
 
 * Org Mode
-
-#+BEGIN_SRC elisp
-(defun my-inhibit-global-linum-mode ()
-  "Counter-act `global-linum-mode'."
-  (add-hook 'after-change-major-mode-hook
-	    (lambda () (linum-mode 0))
-	    :append :local))
-
-(use-package org
-  :config (progn
-	    (setq org-todo-keywords (quote ((sequence "DISCUSS" "TODO" "IN-PROGRESS" "REVIEW" "DELEGATED" "DEFERED" "DONE")))))
-  :init (progn
-		  (add-hook 'org-mode-hook 'my-inhibit-global-linum-mode)
-		  (add-hook 'org-mode-hook 'flyspell-mode)))
-
-(use-package org-bullets
-  :ensure t
-  :config (setq org-bullets-bullet-list '("◉" "⌘" "○" "⌗"))
-  :init (add-hook 'org-mode-hook 'org-bullets-mode))
-
-#+END_SRC
-
+Core of the Org mode is setup in ~init.el~ since org is the foundation for literate and customizations ironically have to happen before org files are read.
 * Org Based Presentations
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (use-package org-present
   :ensure t
   :bind (("<f8>" . org-present)))
@@ -33,7 +12,7 @@
 
 * Org Babel
 
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (defun ob-fix-inline-images ()
   (when org-inline-image-overlays
     (org-redisplay-inline-images)))
@@ -44,10 +23,10 @@
    '((ruby . t)
      (ditaa . t)
      (plantuml . t)
-     (elisp . t))))
+     (emacs-lisp . t))))
 
 (defun ob-confirm-babel-evaluate (lang body)
-  (not (member lang '("python" "go" "ruby" "clojure" "sh" "ditaa" "plantuml" "elisp"))))
+  (not (member lang '("python" "go" "ruby" "clojure" "sh" "ditaa" "plantuml" "emacs-lisp"))))
 
 (use-package ob
   :defer t
@@ -59,7 +38,7 @@
     (add-hook 'org-babel-after-execute-hook 'ob-fix-inline-images)))
 #+END_SRC
 * Plantuml
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 
 (use-package plantuml-mode
   :ensure t
@@ -71,7 +50,7 @@
 #+END_SRC
 
 * Markdown
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (use-package markdown-mode
   :ensure t
   :mode (("README\\.md\\'" . gfm-mode)
@@ -82,7 +61,7 @@
 
 * Emoji in org and markdown
 #+Name: dump
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 
 (use-package company-emoji
   :ensure t
@@ -100,6 +79,6 @@
 
 * Provide this so that it may be required
 #+NAME: provide
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (provide 'docs)
 #+END_SRC

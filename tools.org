@@ -4,7 +4,7 @@
 * Tools
 ** Kubernetes
 #+NAME: kube
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (use-package kubernetes
   :ensure t)
 #+END_SRC
@@ -12,7 +12,7 @@
 ** Terraform
 
 #+NAME: terraform
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (use-package terraform-mode
   :ensure t
   :defer t)
@@ -22,6 +22,6 @@
 * Provide this so that it may be required
 
 #+NAME: provide
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (provide 'tools)
 #+END_SRC

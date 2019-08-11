@@ -1,6 +1,13 @@
 #+TITLE:     Install dependencies
 #+AUTHOR:    Irfan Shah
 
-#+BEGIN_SRC sh
+* emacs-plus homebrew
+#+BEGIN_SRC bash
+brew install emacs-plus --with-gnutls --with-mailutils --with-modern-icon
+#+END_SRC
+
+* plantuml
+#+BEGIN_SRC bash
 brew install plantuml
 #+END_SRC
+

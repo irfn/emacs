@@ -2,7 +2,7 @@
 #+AUTHOR:    Irfan Shah
 * Editor Config
 ** Indents and spacing
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (setq tab-width 2)
 (setq js-indent-level 2)
 (setq css-indent-offset 2)
@@ -17,14 +17,14 @@
 
 #+END_SRC
 ** Editing
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (global-linum-mode)
 
 (global-set-key (kbd "s-/") 'comment-region)
 (global-set-key (kbd "M-s-÷") 'uncomment-region)
 #+END_SRC
 ** Reload from disk
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 ;; Automatically reload files when they change on disk
 (global-auto-revert-mode 1)
 (setq auto-revert-verbose nil)
@@ -32,7 +32,7 @@
 
 ** Edit Behaviours
 
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 ;; Type over selected text
 (delete-selection-mode 1)
 ;; Kill whole line
@@ -53,13 +53,13 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+END_SRC
 * Font
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (when (member "FuraCode Nerd Font" (font-family-list))
   (set-face-attribute 'default nil :font "FuraCode Nerd Font-15"))
 #+END_SRC
 
 * Themes
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (use-package suscolors-theme
   :ensure t)
 
@@ -76,7 +76,7 @@
 #+END_SRC
 * Misc
 ** Yaml
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (use-package yaml-mode
   :ensure t
   :init (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
@@ -91,6 +91,6 @@
 * Provide this so that it may be required
 
 #+NAME: provide
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (provide 'editor)
 #+END_SRC

@@ -1,15 +1,11 @@
 #+TITLE:     Literate Emacs Configuration
 #+AUTHOR:    Irfan Shah
 
-* Literate Emacs configuration via org mode and babel
-
-  Using ~org-babel-load-file~ we loaded this file. The various embedded snippets are the emacs config.
-
 * Generic Config
 ** Enable the use of common lisp
  emacs lisp is not common lisp but can use cl libraries through this bridge.
  #+NAME: common lisp
- #+BEGIN_SRC elisp
+ #+BEGIN_SRC emacs-lisp
  (require 'cl)
  #+END_SRC
 
@@ -17,14 +13,14 @@
 Quite Obviously you want to start Maximized.
 
 #+NAME: maximized frame
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+END_SRC
 
 ** Tune Emacs GC for faster startup.
 Temporarily set gc threshold to largest possible number so that there are no gc pauses during startup. Reset to a sane threshold via hook after the restart is done.
 #+NAME: gc settings
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (defvar best-gc-cons-threshold
   4000000)
 (setq gc-cons-threshold most-positive-fixnum)
@@ -37,7 +33,7 @@ Temporarily set gc threshold to largest possible number so that there are no gc 
 ** Sane Defaults
 Sane default here
 #+NAME: sane
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (tool-bar-mode -1)
 ;; Skip the default splash screen.
 (setq inhibit-startup-screen t)
@@ -54,7 +50,7 @@ Sane default here
 ** Useful Miscellany
 
  #+NAME misc
- #+BEGIN_SRC elisp
+ #+BEGIN_SRC emacs-lisp
  (setq hostname (replace-regexp-in-string "\\(^[[:space:]\n]*\\|[[:space:]\n]*$\\)" "" (with-output-to-string (call-process "hostname" nil standard-output))))
 
  (setq dotfiles-dir (file-name-directory
@@ -69,6 +65,6 @@ Sane default here
 * Provide this so that it may be required
 
 #+NAME: provide
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (provide 'config)
 #+END_SRC

@@ -1,10 +1,16 @@
 #+TITLE:     Go
 #+AUTHOR:    Irfan Shah
 
-* Go Mode
-#+Name: dump
-#+BEGIN_SRC elisp
+* Overview
+** Go Mod
+Should work with go mod projects. 
+** Language Server
+Most of the heavy lifting should be ~lsp~ and ~gopls~
+** Role of older tools
+This is based on how spacemacs go layer was structured, however key elements are changing for go mod support. Hence this is going to be in flux.
+* Go Mode and hooks
 
+#+BEGIN_SRC emacs-lisp
 (use-package go-mode
   :ensure t
   :bind (
@@ -22,6 +28,7 @@
   (add-hook 'go-mode-hook 'setup-go-mode-compile)
   (add-hook 'go-mode-hook #'smartparens-mode)
   (add-hook 'go-mode-hook 'yas-minor-mode)
+  (add-hook 'go-mode-hook 'flycheck-mode)
   
   (add-hook 'go-mode-hook '(lambda ()
 			     (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
@@ -33,6 +40,11 @@
 
   :hook ((go-mode . lsp-deferred)
          (before-save . lsp-organize-imports)))
+#+END_SRC
+
+* Go Completion
+#+Name: dump
+#+BEGIN_SRC emacs-lisp
 
 (use-package company-go
   :ensure t
@@ -44,24 +56,12 @@
   ; Godef jump key binding
   ("M-." . godef-jump)))
 
-(use-package flymake-go
-    :ensure t)
-
 (use-package go-eldoc
   :ensure t
   :config
   (add-hook 'go-mode-hook 'go-eldoc-setup))
 
-(use-package go-snippets
-  :ensure t)
-
 (use-package go-guru
-  :ensure t)
-
-(use-package go-eldoc
-  :ensure t)
-
-(use-package ob-go
   :ensure t)
 
 (defun setup-go-mode-compile ()
@@ -71,9 +71,30 @@
            "go build -v && go test -v && go vet")))
 
 #+END_SRC
+* Syntax & Linting Check
+** Golangci
+#+BEGIN_SRC emacs-lisp
+(use-package flycheck-golangci-lint
+    :ensure t
+    :config 
+    (add-hook 'flycheck-mode-hook #'flycheck-golangci-lint-setup))
+#+END_SRC
 
+* go snippets
+#+NAME: yasnippets
+#+BEGIN_SRC emacs-lisp
+(use-package go-snippets
+  :ensure t)
+#+END_SRC
+
+* babel support
+#+NAME: babel
+#+BEGIN_SRC emacs-lisp
+(use-package ob-go
+  :ensure t)
+#+END_SRC
 * Provide this so that it may be required
 
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (provide 'go)
 #+END_SRC

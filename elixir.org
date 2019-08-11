@@ -3,7 +3,7 @@
 
 * Elixir
 #+Name: dump
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 
 (use-package alchemist
   :ensure t
@@ -13,6 +13,6 @@
 #+END_SRC
 
 * Provide this so that it may be required
-#+BEGIN_SRC elisp
+#+BEGIN_SRC emacs-lisp
 (provide 'elixir)
 #+END_SRC

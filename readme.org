@@ -1,0 +1,18 @@
+#+TITLE:     Readme.
+#+AUTHOR:    Irfan Shah
+
+* Legacy
+This repo has existed for a long time and older config was moved to branches. This is new branch orphaning the older code.
+I went from very custom config to a generic config in form of spacemacs with minimal layer config. 
+This served me well for a long time however spacemacs layer support for languages that i work on has not improved over time and hence the reboot of my emacs config.
+
+* My Emacs config
+1) Literate Emacs configuration via org mode and babel
+2) Using ~org-babel-load-file~ we loaded this file. The various embedded snippets are the emacs config.
+3) code blocks which are annotated as ~emacs-lisp~ will be considered.
+4) other code blocks which exists wont be run.
+5) any new org file needs to be added to ~init.el~ for load.
+6) Mostly just ~use-package~ declaration with glue hooks stitching things together.
+
+* Dependencies
+1) These will be in [[file+emacs:install.org]]
