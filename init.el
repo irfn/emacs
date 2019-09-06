@@ -18,7 +18,7 @@
 (use-package org
   :ensure t
   :config (progn
-	    (setq org-todo-keywords (quote ((sequence "DISCUSS" "TODO" "IN-PROGRESS" "REVIEW" "DELEGATED" "DEFERED" "DONE")))))
+	    (setq org-todo-keywords (quote ((sequence "DISCUSS" "SPIKE" "TODO" "IN-PROGRESS" "REVIEW" "DELEGATED" "DEFERED" "DONE")))))
   :init (progn
 		  (add-hook 'org-mode-hook 'my-inhibit-global-linum-mode)
 		  (add-hook 'org-mode-hook 'flyspell-mode)
@@ -44,6 +44,7 @@
 (tangle-file "clojure.org")
 (tangle-file "rust.org")
 (tangle-file "elixir.org")
+(tangle-file "haskell.org")
 
 (push (expand-file-name "~/.emacs.d/elisp") load-path)
 (require 'config)
@@ -57,6 +58,7 @@
 (require 'clojure)
 (require 'rust)
 (require 'elixir)
+(require 'haskell)
 
 (when (require 'time-date nil t)
   (message "Emacs startup time: %d seconds."

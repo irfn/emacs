@@ -11,6 +11,8 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
   (exec-path-from-shell-initialize)))
 #+END_SRC
 
+#+RESULTS:
+
 * Project Management
 ** Helm
 
@@ -50,10 +52,16 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
 
 (use-package helm-rg
   :ensure t
-  :bind (("M-RET /" . helm-projectile-rg)
+  :bind (("C-c h /" . helm-projectile-rg)
 	 ))
 #+END_SRC
 
+** Neotree: Nerdtree for emacs
+ #+BEGIN_SRC emacs-lisp
+ (use-package neotree
+   :ensure t
+   :bind (("C-c n e" . neotree-toggle)))
+ #+end_src
 ** Indispensable git companion
 #+BEGIN_SRC emacs-lisp
 (use-package magit
@@ -88,8 +96,14 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
   :after yasnippet)
 #+END_SRC
 
+** Dired mode
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "S-<f1>")
+  (lambda ()
+    (interactive)
+    (dired "~/")))
+#+END_SRC
 * Completions
-
 ** Company Mode
 #+BEGIN_SRC emacs-lisp
 (use-package company
@@ -133,10 +147,10 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
   :ensure t)
 
 (use-package hi-lock
-  :bind (("M-RET h l" . highlight-lines-matching-regexp)
-         ("M-RET h r" . highlight-regexp)
-         ("M-RET h w" . highlight-phrase)
-	 ("M-RET h 0" . hi-lock-unface-buffer)))
+  :bind (("C-RET h l" . highlight-lines-matching-regexp)
+         ("C-RET h r" . highlight-regexp)
+         ("C-RET h w" . highlight-phrase)
+	 ("C-RET h 0" . hi-lock-unface-buffer)))
 
 #+END_SRC
 
@@ -146,3 +160,4 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
 #+BEGIN_SRC emacs-lisp
 (provide 'ide)
 #+END_SRC
+

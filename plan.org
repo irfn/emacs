@@ -1,5 +1,6 @@
 
 #+PRIORITIES: 3 2 1
+* DONE Literate https://github.com/joodie/emacs-literal-config/blob/master/emacs.org
 * Bugs
 ** TODO Fix search in project shortcut to work in org-mode.
 * Generic IDE
@@ -11,17 +12,14 @@
 ** DONE Linum
 *** DONE Suppress Linum in org mode
 ** DONE yaml
+** DONE neotree
+** SPIKE ace-window
 ** TODO Spacemacs like shortcuts
+** TODO linum-relative
 ** TODO ggtags
 ** DEFERED Evil mode for being a friendly pair programmer [[ spacemacs/core/core-keybindings.el ][spacemacs impl]]
 * TODO Indenting.
-* DONE Literate https://github.com/joodie/emacs-literal-config/blob/master/emacs.org
 * Basic Support
-** TODO Makefile
-** TODO protobuf
-** TODO jsonnet
-** TODO json
-** TODO csv
 ** TODO Octave
 ** DEFERED prolog
 * Org Mode
@@ -37,7 +35,12 @@
 ** REVIEW helm-org-rifle
 * Tools
 ** DONE terraform
-** TODO Dockerfile
+** DONE Makefile This is builtin.
+** DONE Dockerfile
+** TODO protobuf
+** TODO jsonnet
+** TODO json
+** TODO csv
 * Golang
 ** DONE Gopls
 ** DONE flycheck golangci
@@ -53,6 +56,7 @@
 ** ob-elixir
 ** elixir-yasnippets
 * Clojure
+** Rainbow Delim
 ** TODO Cider
 ** clojure-snippets
 

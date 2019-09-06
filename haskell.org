@@ -1,0 +1,27 @@
+#+TITLE:     Haskell Mode
+#+AUTHOR:    Irfan Shah
+
+
+* Haskell Mode.
+
+[[https://gist.github.com/dysinger/63b7cd03f77ac0125356051b23f47a37][dysinger]]/packages.el
+[[https://github.com/chrisdone/intero/blob/master/EMACS.md][intero/setup]]
+
+#+BEGIN_SRC emacs-lisp
+(use-package haskell-mode 
+  :ensure t)
+#+END_SRC
+
+
+* Intero
+
+#+BEGIN_SRC emacs-lisp
+(use-package intero
+  :ensure t)
+#+END_SRC
+
+
+* Provide this so that it may be required.
+#+BEGIN_SRC emacs-lisp
+(provide 'haskell)
+#+END_SRC
