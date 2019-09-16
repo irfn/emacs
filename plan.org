@@ -17,12 +17,12 @@
 *** DONE Suppress Linum in org mode
 ** DONE yaml
 ** DONE neotree
-** IN-PROGRESS ace-window
-** TODO linum-relative
-** TODO ggtags
+** DONE ace-window
+** REVIEW Indenting.
+** DEFERED linum-relative
+** DEFERED ggtags
 ** DEFERED Evil mode for being a friendly pair programmer [[ spacemacs/core/core-keybindings.el ][spacemacs impl]]
-** TODO Spacemacs like shortcuts
-** TODO Indenting.
+** DEFERED Spacemacs like shortcuts
 * Golang
 ** DONE Gopls
 ** DONE flycheck golangci
