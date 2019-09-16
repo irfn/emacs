@@ -49,6 +49,18 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 
 #+END_SRC
 
+* Calendar
+
+#+BEGIN_SRC emacs-lisp
+(use-package org-gcal
+  :ensure t
+  :init (setq org-gcal-client-id (getenv "ORG_GCAL_CLIENTID")
+              org-gcal-client-secret (getenv "ORG_GCAL_CLIENTSECRET")
+              org-gcal-file-alist '(((getenv "ORG_GCAL_EMAIL") . (getenv "ORG_GCAL_ORG_PATH"))))
+  :after (exec-path-from-shell)
+)
+#+END_SRC
+
 * Markdown
 #+BEGIN_SRC emacs-lisp
 (use-package markdown-mode

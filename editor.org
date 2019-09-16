@@ -88,6 +88,14 @@
 (load custom-file t)
 #+END_SRC
 
+** JSON
+#+BEGIN_SRC emacs-lisp
+(use-package json-mode
+  :ensure t)
+(use-package jsonnet-mode
+  :ensure t)
+#+END_SRC
+
 * Provide this so that it may be required
 
 #+NAME: provide

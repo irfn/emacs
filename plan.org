@@ -1,6 +1,12 @@
 
 #+PRIORITIES: 3 2 1
 * DONE Literate https://github.com/joodie/emacs-literal-config/blob/master/emacs.org
+* DONE Tools
+** DONE terraform
+** DONE Makefile This is builtin.
+** DONE Dockerfile
+** DONE jsonnet
+** DONE json
 * Bugs
 ** TODO Fix search in project shortcut to work in org-mode.
 * Generic IDE
@@ -22,6 +28,7 @@
 * Basic Support
 ** TODO Octave
 ** DEFERED prolog
+** TODO protobuf
 * Org Mode
 ** DONE Org Bullets
 ** DONE plantuml, ditaa
@@ -33,14 +40,6 @@
 ** TODO org-agenda
 ** REVIEW org-brain
 ** REVIEW helm-org-rifle
-* Tools
-** DONE terraform
-** DONE Makefile This is builtin.
-** DONE Dockerfile
-** TODO protobuf
-** TODO jsonnet
-** TODO json
-** TODO csv
 * Golang
 ** DONE Gopls
 ** DONE flycheck golangci
