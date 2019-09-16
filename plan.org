@@ -7,8 +7,6 @@
 ** DONE Dockerfile
 ** DONE jsonnet
 ** DONE json
-* Bugs
-** TODO Fix search in project shortcut to work in org-mode.
 * Generic IDE
 ** DONE Magit
 ** DONE Projectile
@@ -20,15 +18,31 @@
 ** DONE yaml
 ** DONE neotree
 ** SPIKE ace-window
-** TODO Spacemacs like shortcuts
 ** TODO linum-relative
 ** TODO ggtags
 ** DEFERED Evil mode for being a friendly pair programmer [[ spacemacs/core/core-keybindings.el ][spacemacs impl]]
-* TODO Indenting.
-* Basic Support
-** TODO Octave
-** DEFERED prolog
-** TODO protobuf
+** TODO Spacemacs like shortcuts
+** TODO Indenting.
+* Golang
+** DONE Gopls
+** DONE flycheck golangci
+** IN-PROGRESS completions via gopls
+** TODO change Goto Definition to be gopls
+** TODO run single test
+** TODO run tests in package
+** TODO ~go-fill-struct~
+** TODO ~gtags~
+* TODO Ruby
+** TODO Rails
+* Elixir
+** ob-elixir
+** elixir-yasnippets
+* Clojure
+** Rainbow Delim
+** TODO Cider
+** clojure-snippets
+
+** https://gitlab.com/nilenso/dotemacs/blob/master/init.el
 * Org Mode
 ** DONE Org Bullets
 ** DONE plantuml, ditaa
@@ -40,33 +54,19 @@
 ** TODO org-agenda
 ** REVIEW org-brain
 ** REVIEW helm-org-rifle
-* Golang
-** DONE Gopls
-** DONE flycheck golangci
-** IN-PROGRESS completions via gopls
-** TODO change Goto Definition to be gopls
-** TODO run single test
-** TODO run tests in package
-** TODO ~go-fill-struct~
-** TODO ~gtags~
-* TODO Ruby
-* TODO Rails
-* Elixir
-** ob-elixir
-** elixir-yasnippets
-* Clojure
-** Rainbow Delim
-** TODO Cider
-** clojure-snippets
-
-** https://gitlab.com/nilenso/dotemacs/blob/master/init.el
+* powerline
+** powerline themes
+* Hydra
+- https://github.com/abo-abo/hydra/
+* Bugs
+** TODO Fix search in project shortcut to work in org-mode.
 * Add langs
 ** DEFERED ocaml
 ** DEFERED lua
 ** DEFERED Erlang
 ** DEFERED haskell
 ** DEFERED swift
-* powerline
-** powerline themes
-* Hydra
-- https://github.com/abo-abo/hydra/
+* Basic Support
+** TODO Octave
+** DEFERED prolog
+** TODO protobuf
