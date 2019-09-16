@@ -17,7 +17,7 @@
 *** DONE Suppress Linum in org mode
 ** DONE yaml
 ** DONE neotree
-** SPIKE ace-window
+** IN-PROGRESS ace-window
 ** TODO linum-relative
 ** TODO ggtags
 ** DEFERED Evil mode for being a friendly pair programmer [[ spacemacs/core/core-keybindings.el ][spacemacs impl]]

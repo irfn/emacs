@@ -90,9 +90,19 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
 
 ** Window Management
 #+BEGIN_SRC emacs-lisp
+(windmove-default-keybindings)
 (use-package winner
   :ensure t
   )
+
+(use-package ace-window
+  :ensure t)
+
+(global-set-key (kbd "M-o") 'ace-window)
+
+
+
+
 #+END_SRC
 
 ** Snippets

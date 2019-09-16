@@ -22,3 +22,8 @@ go get -u -v golang.org/x/tools/cmd/goimports
 go get -u -v github.com/golangci/golangci-lint/cmd/golangci-lint
 
 #+END_SRC
+
+* Manual steps
+#+BEGIN_SRC lisp
+all-the-icons-install-fonts
+#+END_SRC
