@@ -50,6 +50,7 @@
 (tangle-file "rust.org")
 (tangle-file "elixir.org")
 (tangle-file "haskell.org")
+(tangle-file "sml.org")
 
 (push (expand-file-name "~/.emacs.d/elisp") load-path)
 (require 'config)
@@ -64,6 +65,7 @@
 (require 'rust)
 (require 'elixir)
 (require 'haskell)
+(require 'sml)
 
 (when (require 'time-date nil t)
   (message "Emacs startup time: %d seconds."

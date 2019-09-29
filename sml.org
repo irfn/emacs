@@ -1,0 +1,24 @@
+#+TITLE:     SML / NJ
+#+AUTHOR:    Irfan Shah
+
+
+* SML Mode
+
+Standard ML Mode (Standard ML Of New Jersey) [[https://www.smlnj.org/)][smlnj]]
+#+BEGIN_SRC emacs-lisp
+(use-package sml-mode
+  :ensure t)
+#+END_SRC
+
+* SML for Org mode inline
+
+#+BEGIN_SRC emacs-lisp
+(use-package ob-sml
+  :ensure t)
+#+END_SRC
+
+
+* Provide this so that it may be required.
+#+BEGIN_SRC emacs-lisp
+(provide 'sml)
+#+END_SRC

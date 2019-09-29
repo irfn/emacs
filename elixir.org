@@ -2,7 +2,10 @@
 #+AUTHOR:    Irfan Shah
 
 * Elixir
-#+Name: dump
+
+** Alchemist
+Alchemist is a legacy mode.
+#+Name: alchemist
 #+BEGIN_SRC emacs-lisp
 
 (use-package alchemist
@@ -11,7 +14,13 @@
   (setq alchemist-mix-command "/usr/local/bin/mix")
   (setq alchemist-iex-program-name "/usr/local/bin/iex"))
 #+END_SRC
-
+** Elixir-Mode
+#+BEGIN_SRC emacs-lisp
+(use-package elixir-mode
+  :ensure t
+  :init (add-hook 'elixir-mode-hook
+          (lambda () (add-hook 'before-save-hook 'elixir-format nil t))))
+#+END_SRC
 * Provide this so that it may be required
 #+BEGIN_SRC emacs-lisp
 (provide 'elixir)
