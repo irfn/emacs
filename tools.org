@@ -2,13 +2,27 @@
 #+AUTHOR:    Irfan Shah
 
 * Tools
-** Dockerfile
-Add basic highlighting support
+** Docker
+
+Add basic Dockerfile highlighting support
 
 #+BEGIN_SRC emacs-lisp
 (use-package dockerfile-mode
   :ensure t)
 #+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(use-package docker-compose-mode
+  :ensure t)
+#+END_SRC
+
+Add Docker operations support
+
+#+BEGIN_SRC emacs-lisp
+(use-package docker
+  :ensure t)
+#+END_SRC
+
 ** Kubernetes
 #+NAME: kube
 #+BEGIN_SRC emacs-lisp
@@ -16,6 +30,13 @@ Add basic highlighting support
   :ensure t)
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp
+(use-package k8s-mode
+ :ensure t
+ :config
+ (setq k8s-search-documentation-browser-function 'browse-url-firefox)
+ :hook (k8s-mode . yas-minor-mode))
+#+END_SRC
 ** Terraform
 
 #+NAME: terraform

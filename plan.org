@@ -5,8 +5,8 @@
 ** DONE terraform
 ** DONE Makefile This is builtin.
 ** DONE Dockerfile
-** DONE jsonnet
-** DONE json
+** DONE docker compose
+** DONE docker
 * Generic IDE
 ** DONE Magit
 ** DONE Projectile
@@ -19,11 +19,28 @@
 ** DONE neotree
 ** DONE ace-window
 ** DONE doom modeline
+** DONE jsonnet
+** DONE json
 ** REVIEW Indenting.
 ** DEFERED linum-relative
 ** DEFERED ggtags
 ** DEFERED Evil mode for being a friendly pair programmer [[ spacemacs/core/core-keybindings.el ][spacemacs impl]]
 ** DEFERED Spacemacs like shortcuts
+* Org Mode
+** DONE Org Bullets
+** DONE plantuml, ditaa
+** TODO org-projectile
+** TODO org-wunderlist
+** TODO org-journal
+** SPIKE rem + org rem
+** DEFERED org-caldav
+** DEFERED org-kanban
+** TODO org-agenda
+** TODO idle-org-agenda
+** DEFERED org-brain
+** DEFERED helm-org-rifle
+* TODO Ruby
+** TODO Rails
 * Golang
 ** DONE Gopls
 ** DONE flycheck golangci
@@ -33,8 +50,6 @@
 ** TODO run tests in package
 ** TODO ~go-fill-struct~
 ** TODO ~gtags~
-* TODO Ruby
-** TODO Rails
 * Elixir
 ** ob-elixir
 ** elixir-yasnippets
@@ -44,17 +59,6 @@
 ** clojure-snippets
 
 ** https://gitlab.com/nilenso/dotemacs/blob/master/init.el
-* Org Mode
-** DONE Org Bullets
-** DONE plantuml, ditaa
-** TODO org-projectile
-** DEFERED org-caldav
-** DEFERED org-kanban
-** TODO org-wunderlist
-** TODO idle-org-agenda
-** TODO org-agenda
-** REVIEW org-brain
-** REVIEW helm-org-rifle
 * Hydra
 - https://github.com/abo-abo/hydra/
 * Bugs
