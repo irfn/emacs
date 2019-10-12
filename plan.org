@@ -18,6 +18,7 @@
 ** DONE yaml
 ** DONE neotree
 ** DONE ace-window
+** DONE doom modeline
 ** REVIEW Indenting.
 ** DEFERED linum-relative
 ** DEFERED ggtags
@@ -54,8 +55,6 @@
 ** TODO org-agenda
 ** REVIEW org-brain
 ** REVIEW helm-org-rifle
-* powerline
-** powerline themes
 * Hydra
 - https://github.com/abo-abo/hydra/
 * Bugs

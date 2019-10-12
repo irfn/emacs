@@ -24,6 +24,17 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
   :ensure t)
 #+END_SRC
 
+** Modeline
+
+#+BEGIN_SRC emacs-lisp
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode))
+#+END_SRC
+
+#+RESULTS:
+| doom-modeline-mode | (lambda nil (setq gc-cons-threshold best-gc-cons-threshold)) | magit-auto-revert-mode--init-kludge | magit-startup-asserts | magit-version | table--make-cell-map |
+
 * Project Management
 ** Helm
 

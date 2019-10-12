@@ -3,6 +3,14 @@
 
 * Org Mode
 Core of the Org mode is setup in ~init.el~ since org is the foundation for literate and customizations ironically have to happen before org files are read.
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c C-<return>") 'remember)
+#+END_SRC
+
+#+RESULTS:
+: remember
+
 * Org Based Presentations
 #+BEGIN_SRC emacs-lisp
 (use-package org-present
@@ -70,6 +78,15 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 #+END_SRC
+
+Enabling export of Org to GH Flavored markdown
+
+#+BEGIN_SRC emacs-lisp
+(use-package ox-gfm
+   :ensure t)
+#+END_SRC
+
+#+RESULTS:
 
 * Emoji in org and markdown
 #+Name: dump

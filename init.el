@@ -18,7 +18,7 @@
 (use-package org
   :ensure t
   :config (progn
-            (setq org-todo-keywords (quote ((sequence "DISCUSS" "SPIKE" "TODO" "IN-PROGRESS" "REVIEW" "DELEGATED" "DEFERED" "DONE"))))
+            (setq org-todo-keywords (quote ((sequence "DISCUSS" "SPIKE" "ESTIMATE" "TODO" "IN-PROGRESS" "REVIEW" "DELEGATED" "DEFERED" "DONE" "REDO"))))
             (add-hook 'org-shiftup-final-hook 'windmove-up)
             (add-hook 'org-shiftleft-final-hook 'windmove-left)
             (add-hook 'org-shiftdown-final-hook 'windmove-down)
