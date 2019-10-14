@@ -72,7 +72,7 @@
 (use-package dracula-theme
   :ensure t)
 
-(load-theme 'dracula t)
+(load-theme 'gruvbox-dark-soft t)
 #+END_SRC
 * Misc
 ** Yaml
