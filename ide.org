@@ -1,17 +1,23 @@
 #+TITLE:     Core IDE
 #+AUTHOR:    Irfan Shah
 
+* Env Vars
+
+#+BEGIN_SRC emacs-lisp
+(use-package load-env-vars
+  :ensure t
+  :init (load-env-vars "~/.profile"))
+#+END_SRC
 * Exec Path
 This is to ensure that shell and Emacs can share ~PATH~ env var
 #+BEGIN_SRC emacs-lisp
 (use-package exec-path-from-shell
   :ensure t
-  :config (setq exec-path-from-shell-variables '("PATH" "GOPATH" "ORG_GCAL_CLIENTID" "ORG_GCAL_CLIENTSECRET" "ORG_GCAL_EMAIL" "ORG_GCAL_ORG_PATH"))
+  :config (setq exec-path-from-shell-variables '("PATH"))
   :init
   (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize)))
 #+END_SRC
-
 #+RESULTS:
 
 * UX

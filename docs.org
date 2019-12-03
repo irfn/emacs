@@ -65,7 +65,6 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
   :init (setq org-gcal-client-id (getenv "ORG_GCAL_CLIENTID")
               org-gcal-client-secret (getenv "ORG_GCAL_CLIENTSECRET")
               org-gcal-file-alist '(((getenv "ORG_GCAL_EMAIL") . (getenv "ORG_GCAL_ORG_PATH"))))
-  :after (exec-path-from-shell)
 )
 #+END_SRC
 
@@ -88,6 +87,10 @@ Enabling export of Org to GH Flavored markdown
 
 #+RESULTS:
 
+#+BEGIN_SRC emacs-lisp
+(use-package auto-org-md
+   :ensure t)
+#+END_SRC
 * Emoji in org and markdown
 #+Name: dump
 #+BEGIN_SRC emacs-lisp

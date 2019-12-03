@@ -18,7 +18,7 @@
 (use-package org
   :ensure t
   :config (progn
-            (setq org-todo-keywords (quote ((sequence "DISCUSS" "SPIKE" "ESTIMATE" "TODO" "IN-PROGRESS" "REVIEW" "DELEGATED" "DEFERED" "DONE" "REDO"))))
+            (setq org-todo-keywords (quote ((sequence "DISCUSS" "SPIKE" "ESTIMATE" "TODO" "IN-PROGRESS" "REVIEW" "DEFERED" "REDO" "|" "CANCELLED" "PUNTED" "DELEGATED" "DONE"))))
             (add-hook 'org-shiftup-final-hook 'windmove-up)
             (add-hook 'org-shiftleft-final-hook 'windmove-left)
             (add-hook 'org-shiftdown-final-hook 'windmove-down)
@@ -27,6 +27,7 @@
   :init (progn
 		  (add-hook 'org-mode-hook 'my-inhibit-global-linum-mode)
 		  (add-hook 'org-mode-hook 'flyspell-mode)
+		  (add-hook 'org-mode-hook 'auto-org-md-mode)
           (add-hook 'org-mode-hook 'org-bullets-mode)))
 
 (use-package org-bullets
@@ -48,6 +49,7 @@
 (tangle-file "go.org")
 (tangle-file "clojure.org")
 (tangle-file "rust.org")
+(tangle-file "erl.org")
 (tangle-file "elixir.org")
 (tangle-file "haskell.org")
 (tangle-file "sml.org")
@@ -63,6 +65,7 @@
 (require 'go)
 (require 'clojure)
 (require 'rust)
+(require 'erl)
 (require 'elixir)
 (require 'haskell)
 (require 'sml)

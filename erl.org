@@ -1,0 +1,40 @@
+#+TITLE:     Making of an Erlang IDE
+#+AUTHOR:    Irfan Shah
+
+
+So, to get syntax highlighting, lint and autocomplete, the packages we need are:
+
+* Mode
+needed
+
+    erlang-mode
+    distel
+    popup
+    company
+    flycheck
+    flycheck-tip
+    company-distel
+
+
+#+BEGIN_SRC emacs-lisp
+(setq load-path (cons  "/usr/local/Cellar/erlang/22.1.3/lib/erlang/lib/tools-3.2.1/emacs/"
+      load-path))
+(require 'erlang-start)
+
+
+(use-package erlang
+  :ensure t)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  ;;(require 'distel)
+
+  ;; (use-package company-distel
+  ;;   :ensure t
+  ;;   :init (add-to-list 'company-backends 'company-distel))
+#+END_SRC
+* Provide this so that it may be required
+#+NAME: provide
+#+BEGIN_SRC emacs-lisp
+(provide 'erl)
+#+END_SRC
