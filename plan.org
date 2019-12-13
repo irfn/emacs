@@ -39,7 +39,8 @@
 ** TODO idle-org-agenda
 ** DEFERED org-brain
 ** DEFERED helm-org-rifle
-* TODO Ruby
+* IN-PROGRESS Ruby
+** Ruby
 ** TODO Rails
 * Golang
 ** DONE Gopls

@@ -1,0 +1,52 @@
+#+TITLE:     Ruby
+#+AUTHOR:    Irfan Shah
+
+* Ruby
+#+BEGIN_SRC emacs-lisp
+(use-package rbenv
+  :ensure t)
+
+(use-package enh-ruby-mode
+  :ensure t
+  :init (progn
+  (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
+  (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+  (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+  ))
+#+END_SRC
+
+* Lints
+#+BEGIN_SRC emacs-lisp
+(use-package rubocop
+  :ensure t)
+#+END_SRC
+
+* Syntax
+#+BEGIN_SRC emacs-lisp
+(use-package flymake-ruby
+  :ensure t
+  :init (add-hook 'enh-ruby-mode-hook 'flymake-ruby-load))
+
+(use-package ruby-hash-syntax
+  :ensure t)
+
+(use-package rubocopfmt
+  :ensure t)
+
+#+END_SRC
+
+* Ruby REPL/Run
+#+BEGIN_SRC emacs-lisp
+(use-package inf-ruby
+  :ensure t)
+#+END_SRC
+* Specs
+#+BEGIN_SRC emacs-lisp
+(use-package rspec-mode
+  :ensure t)
+#+END_SRC
+* TODO Debugger
+* Provide this so that it may be required
+#+BEGIN_SRC emacs-lisp
+(provide 'ruby)
+#+END_SRC
