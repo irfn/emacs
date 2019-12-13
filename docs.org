@@ -50,12 +50,19 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 
 (use-package plantuml-mode
   :ensure t
-  :init (setq org-plantuml-jar-path
-	      (expand-file-name "/usr/local/Cellar/plantuml/1.2019.8/libexec/plantuml.jar"))
+  :init
+  (progn
+  (setq org-plantuml-jar-path
+	(expand-file-name "/usr/local/Cellar/plantuml/1.2019.8/libexec/plantuml.jar"))
+  (setq plantuml-default-exec-mode 'jar))
 )
 
 
+
+
 #+END_SRC
+
+#+RESULTS:
 
 * Calendar
 
