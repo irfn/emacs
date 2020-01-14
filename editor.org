@@ -60,19 +60,21 @@
 
 * Themes
 #+BEGIN_SRC emacs-lisp
-(use-package suscolors-theme
+;;(use-package suscolors-theme
+;;  :ensure t)
+
+;;(use-package gruvbox-theme
+;;  :ensure t)
+
+;;(use-package inkpot-theme
+;;  :ensure t)
+
+;;(use-package dracula-theme
+;;  :ensure t)
+
+(use-package srcery-theme
   :ensure t)
 
-(use-package gruvbox-theme
-  :ensure t)
-
-(use-package inkpot-theme
-  :ensure t)
-
-(use-package dracula-theme
-  :ensure t)
-
-(load-theme 'gruvbox-dark-soft t)
 #+END_SRC
 * Misc
 ** Yaml
@@ -101,6 +103,14 @@
 (use-package protobuf-mode
   :ensure t)
 #+END_SRC
+** ansible vault
+#+BEGIN_SRC emacs-lisp
+(use-package ansible-vault
+  :ensure t)
+#+END_SRC
+
+#+RESULTS:
+
 * Provide this so that it may be required
 
 #+NAME: provide
