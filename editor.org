@@ -54,8 +54,8 @@
 #+END_SRC
 * Font
 #+BEGIN_SRC emacs-lisp
-(when (member "FuraCode Nerd Font" (font-family-list))
-  (set-face-attribute 'default nil :font "FuraCode Nerd Font-15"))
+(when (member "Fira Code" (font-family-list))
+  (set-face-attribute 'default nil :font "Fira Code-15"))
 #+END_SRC
 
 * Themes
