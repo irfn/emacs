@@ -27,7 +27,7 @@
   :init (progn
 		  (add-hook 'org-mode-hook 'my-inhibit-global-linum-mode)
 		  (add-hook 'org-mode-hook 'flyspell-mode)
-		  (add-hook 'org-mode-hook 'auto-org-md-mode)
+		  ;;(add-hook 'org-mode-hook 'auto-org-md-mode)
           (add-hook 'org-mode-hook 'org-bullets-mode)))
 
 (use-package org-bullets
