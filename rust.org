@@ -10,18 +10,18 @@
 (use-package rust-mode
   :ensure t)
 
-(use-package flymake-rust
-  :ensure t)
+(use-package flycheck-rust
+  :ensure t
+  :config (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 (use-package cargo
-  :ensure t)
+  :ensure t
+  :hook (rust-mode . cargo-minor-mode))
 
 (use-package racer
   :ensure t)
 
-(add-hook 'rust-mode-hook 'cargo-minor-mode)
 (add-hook 'rust-mode-hook 'racer-mode)
-
 #+END_SRC
 
 * Provide this so that it may be required

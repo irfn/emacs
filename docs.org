@@ -45,6 +45,14 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
     ;; Fix redisplay of inline images after a code block evaluation.
     (add-hook 'org-babel-after-execute-hook 'ob-fix-inline-images)))
 #+END_SRC
+* Org Export
+#+begin_src emacs-lisp
+(use-package ox-odt
+  :ensure t)
+#+end_src
+
+#+RESULTS:
+
 * Plantuml
 #+BEGIN_SRC emacs-lisp
 
@@ -56,9 +64,6 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 	(expand-file-name "/usr/local/Cellar/plantuml/1.2019.12/libexec/plantuml.jar"))
   (setq plantuml-default-exec-mode 'jar))
 )
-
-
-
 
 #+END_SRC
 

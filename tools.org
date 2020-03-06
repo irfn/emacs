@@ -45,7 +45,13 @@ Add Docker operations support
   :ensure t
   :defer t)
 #+END_SRC
-
+** Telegram
+#+NAME: telegram
+#+BEGIN_SRC emacs-lisp
+(use-package telega
+  :ensure t
+  :defer t)
+#+END_SRC
 
 * Provide this so that it may be required
 

@@ -173,7 +173,8 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
             (setq company-idle-delay 0)
             (setq company-minimum-prefix-length 1)
             (setq company-tooltip-align-annotations t)
-            ))
+            )
+  :hook (prog-mode . company-mode))
 
 #+END_SRC
 
@@ -182,7 +183,8 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
 (use-package lsp-mode
   :ensure t
   ;; :custom (lsp-gopls-server-args '("-debug" "127.0.0.1:0"))
-  :commands (lsp lsp-deferred))
+  :commands (lsp lsp-deferred)
+  :config (require 'lsp-clients))
 
 
 (use-package lsp-ui
@@ -205,7 +207,8 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
 
 #+BEGIN_SRC emacs-lisp
 (use-package flycheck
-  :ensure t)
+  :ensure t
+  :hook (prog-mode . flycheck-mode))
 
 (use-package hi-lock
   :bind (("C-RET h l" . highlight-lines-matching-regexp)

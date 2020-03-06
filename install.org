@@ -27,3 +27,7 @@ go get -u -v github.com/golangci/golangci-lint/cmd/golangci-lint
 #+BEGIN_SRC lisp
 all-the-icons-install-fonts
 #+END_SRC
+Add package-archives for ox-odt
+#+begin_src lisp
+("ox-odt" . "https://kjambunathan.github.io/elpa/")
+#+end_src

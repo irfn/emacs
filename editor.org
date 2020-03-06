@@ -111,6 +111,11 @@
 
 #+RESULTS:
 
+** Toml
+#+BEGIN_SRC emacs-lisp
+(use-package toml-mode
+  :ensure t)
+#+END_SRC
 * Provide this so that it may be required
 
 #+NAME: provide
