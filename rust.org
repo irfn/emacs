@@ -16,12 +16,13 @@
 
 (use-package cargo
   :ensure t
+  :diminish cargo-minor-mode
   :hook (rust-mode . cargo-minor-mode))
 
-(use-package racer
-  :ensure t)
+;;(use-package racer
+;;  :ensure t)
 
-(add-hook 'rust-mode-hook 'racer-mode)
+;;(add-hook 'rust-mode-hook 'racer-mode)
 #+END_SRC
 
 * Provide this so that it may be required

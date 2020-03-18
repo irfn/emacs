@@ -58,6 +58,32 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
 #+RESULTS:
 | doom-modeline-mode | (lambda nil (setq gc-cons-threshold best-gc-cons-threshold)) | magit-auto-revert-mode--init-kludge | magit-startup-asserts | magit-version | table--make-cell-map |
 
+** Dashboard
+#+BEGIN_SRC emacs-lisp
+(setq dashboard-banner-logo-title "Huh!")
+(setq dashboard-startup-banner "~/dev/etc/don-t-panic.png")
+
+(setq show-week-agenda-p t)
+
+;; To disable shortcut "jump" indicators for each section, set
+;;(setq dashboard-show-shortcuts nil)
+
+(setq dashboard-items '((recents  . 8)
+                        (bookmarks . 5)
+                        (projects . 5)
+                        (agenda . 5)
+                        (registers . 5)))
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+#+END_SRC
+
+#+RESULTS:
+: t
+
 * Project Management
 ** Helm
 
