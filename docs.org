@@ -52,7 +52,6 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 #+end_src
 
 #+RESULTS:
-
 * Plantuml
 #+BEGIN_SRC emacs-lisp
 

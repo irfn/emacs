@@ -63,7 +63,7 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
 (setq dashboard-banner-logo-title "Huh!")
 (setq dashboard-startup-banner "~/dev/etc/don-t-panic.png")
 
-(setq show-week-agenda-p t)
+;;(setq show-week-agenda-p t)
 
 ;; To disable shortcut "jump" indicators for each section, set
 ;;(setq dashboard-show-shortcuts nil)
@@ -79,6 +79,25 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
   :config
   (dashboard-setup-startup-hook))
 
+
+(setq dashboard-footer-messages '(
+"Talking to his professor about orbital mechanics, Newton realized that he needed to stop and invent Calculus. Go Shave that yak! err.. Once in a while."
+"'Git' was several weeks of yak shaving for linus! Go Shave that yak! err.. Once in a while."
+"Be aware of the army of yaks that threatens your time and sanity!"
+"The Golden Yak is the yak that changes everything, the one that alters your reality."
+"Golden yaks change behavior."
+"Yaks are a part of life and of progress."
+"Yaks. They’re so much more than hair."
+"Wat! you think you found that extremely rare 'Golden Yak'"
+"Welcome to the church of Emacs"
+"While any text editor can save your files,\
+only Emacs can save your soul"
+"Meta yaks are magical!"
+"Why Should I Care What Color the Bikeshed Is?"
+"Using vi is not a sin; it is a penance"
+"Calling EMACS an editor is like calling the Earth a hunk of dirt."
+"Emacs is a nice operating system"
+))
 #+END_SRC
 
 #+RESULTS:
