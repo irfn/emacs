@@ -8,6 +8,7 @@ Should work with go mod projects.
 Most of the heavy lifting should be ~lsp~ and ~gopls~
 ** Role of older tools
 This is based on how spacemacs go layer was structured, however key elements are changing for go mod support. Hence this is going to be in flux.
+
 * Go Mode and hooks
 
 #+BEGIN_SRC emacs-lisp
@@ -31,7 +32,8 @@ This is based on how spacemacs go layer was structured, however key elements are
   (add-hook 'go-mode-hook 'flycheck-mode)
   
   (add-hook 'go-mode-hook '(lambda ()
-			     (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
+           (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
+           (local-set-key (kbd "C-c b") 'go-run)))
   (add-hook 'go-mode-hook '(lambda ()
 			     (local-set-key (kbd "C-c C-g") 'go-goto-imports)))
   (add-hook 'go-mode-hook (lambda ()
@@ -42,6 +44,19 @@ This is based on how spacemacs go layer was structured, however key elements are
          (before-save . lsp-organize-imports)))
 #+END_SRC
 
+* Testing
+#+BEGIN_SRC emacs-lisp
+(use-package gotest
+  :ensure t
+  :config
+  (add-hook 'go-mode-hook '(lambda ()
+			     (local-set-key (kbd "C-c a") 'go-test-current-project)
+                 (local-set-key (kbd "C-c m") 'go-test-current-file)
+                 (local-set-key (kbd "C-c ,") 'go-test-current-test)
+           ))
+
+)
+#+END_SRC
 * Go Completion
 #+Name: dump
 #+BEGIN_SRC emacs-lisp
@@ -86,7 +101,6 @@ This is based on how spacemacs go layer was structured, however key elements are
 (use-package go-snippets
   :ensure t)
 #+END_SRC
-
 * babel support
 #+NAME: babel
 #+BEGIN_SRC emacs-lisp
