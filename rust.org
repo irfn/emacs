@@ -24,6 +24,11 @@
 
 ;;(add-hook 'rust-mode-hook 'racer-mode)
 #+END_SRC
+* babel support
+#+BEGIN_SRC emacs-lisp
+(use-package ob-rust
+   :ensure t)
+#+END_SRC
 
 * Provide this so that it may be required
 #+BEGIN_SRC emacs-lisp

@@ -22,6 +22,8 @@
 
 (global-set-key (kbd "H-/") 'comment-region)
 (global-set-key (kbd "M-s-÷") 'uncomment-region)
+(set-cursor-color "wheat")
+
 #+END_SRC
 ** Reload from disk
 #+BEGIN_SRC emacs-lisp
@@ -55,7 +57,7 @@
 * Font
 #+BEGIN_SRC emacs-lisp
 (when (member "Fira Code" (font-family-list))
-  (set-face-attribute 'default nil :font "Fira Code-15"))
+  (set-face-attribute 'default nil :font "Fira Code-17"))
 #+END_SRC
 
 * Themes
@@ -74,7 +76,7 @@
 
 (use-package srcery-theme
   :ensure t)
-
+(load-theme 'srcery)
 #+END_SRC
 * Misc
 ** Yaml

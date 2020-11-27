@@ -31,10 +31,11 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
    '((ruby . t)
      (ditaa . t)
      (plantuml . t)
-     (emacs-lisp . t))))
+     (emacs-lisp . t)
+     (rust . t))))
 
-(defun ob-confirm-babel-evaluate (lang body)
-  (not (member lang '("python" "go" "ruby" "clojure" "sh" "ditaa" "plantuml" "emacs-lisp"))))
+(defun ob-confirm-babel-evaluate (lang body);;
+  (not (member lang '("python" "go" "ruby" "clojure" "sh" "ditaa" "plantuml" "emacs-lisp", "rust"))))
 
 (use-package ob
   :defer t
@@ -71,12 +72,12 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 * Calendar
 
 #+BEGIN_SRC emacs-lisp
-(use-package org-gcal
-  :ensure t
-  :init (setq org-gcal-client-id (getenv "ORG_GCAL_CLIENTID")
-              org-gcal-client-secret (getenv "ORG_GCAL_CLIENTSECRET")
-              org-gcal-file-alist '(((getenv "ORG_GCAL_EMAIL") . (getenv "ORG_GCAL_ORG_PATH"))))
-)
+;;(use-package org-gcal
+;;  :ensure t
+;;  :init (setq org-gcal-client-id (getenv "ORG_GCAL_CLIENTID")
+;;              org-gcal-client-secret (getenv "ORG_GCAL_CLIENTSECRET")
+;;              org-gcal-file-alist '(((getenv "ORG_GCAL_EMAIL") . (getenv "ORG_GCAL_ORG_PATH"))))
+;;)
 #+END_SRC
 
 * Markdown

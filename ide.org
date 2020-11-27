@@ -8,6 +8,9 @@
   :ensure t
   :init (load-env-vars "~/.profile"))
 #+END_SRC
+
+#+RESULTS:
+
 * Exec Path
 This is to ensure that shell and Emacs can share ~PATH~ env var
 #+BEGIN_SRC emacs-lisp
@@ -19,6 +22,7 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
   (exec-path-from-shell-initialize)))
 #+END_SRC
 #+RESULTS:
+: tcar
 
 * Mac
 #+BEGIN_SRC emacs-lisp
@@ -73,12 +77,7 @@ This is to ensure that shell and Emacs can share ~PATH~ env var
                         (projects . 5)
                         (agenda . 5)
                         (registers . 5)))
-
-(use-package dashboard
-  :ensure t
-  :config
-  (dashboard-setup-startup-hook))
-
+;;(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
 
 (setq dashboard-footer-messages '(
 "Talking to his professor about orbital mechanics, Newton realized that he needed to stop and invent Calculus. Go Shave that yak! err.. Once in a while."
@@ -98,6 +97,11 @@ only Emacs can save your soul"
 "Calling EMACS an editor is like calling the Earth a hunk of dirt."
 "Emacs is a nice operating system"
 ))
+(use-package dashboard
+  :ensure t
+  :config (setq dashboard-startup-banner 3)
+  :init (dashboard-setup-startup-hook))
+
 #+END_SRC
 
 #+RESULTS:
