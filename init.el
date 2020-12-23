@@ -54,6 +54,7 @@
 (tangle-file "haskell.org")
 (tangle-file "sml.org")
 (tangle-file "ruby.org")
+(tangle-file "ts.org")
 
 (push (expand-file-name "~/.emacs.d/elisp") load-path)
 (require 'config)

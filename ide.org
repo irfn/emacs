@@ -257,7 +257,9 @@ only Emacs can save your soul"
 #+BEGIN_SRC emacs-lisp
 (use-package flycheck
   :ensure t
-  :hook (prog-mode . flycheck-mode))
+  :hook (
+  (prog-mode . flycheck-mode)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))))
 
 (use-package hi-lock
   :bind (("C-RET h l" . highlight-lines-matching-regexp)

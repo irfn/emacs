@@ -1,0 +1,18 @@
+#+TITLE:     Typescript IDE
+#+AUTHOR:    Irfan Shah
+
+* Tide
+
+Tide initialization
+
+#+BEGIN_SRC emacs-lisp
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+  (typescript-mode . tide-hl-identifier-mode)
+  (before-save . tide-format-before-save)
+  (tide-start-server-if-required)
+  (eldoc-mode)
+  ))
+#+END_SRC
