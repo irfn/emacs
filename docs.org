@@ -5,6 +5,8 @@
 Core of the Org mode is setup in ~init.el~ since org is the foundation for literate and customizations ironically have to happen before org files are read.
 
 #+BEGIN_SRC emacs-lisp
+
+(setq org-export-with-sub-superscripts nil)
 (global-set-key (kbd "C-c C-<return>") 'remember)
 #+END_SRC
 

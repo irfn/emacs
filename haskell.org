@@ -16,8 +16,8 @@
 * Intero
 
 #+BEGIN_SRC emacs-lisp
-(use-package intero
-  :ensure t)
+;;(use-package intero
+;;  :ensure t)
 #+END_SRC
 
 
