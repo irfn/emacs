@@ -7,6 +7,9 @@
 			 ("gnu"       . "http://elpa.gnu.org/packages/")
 			 ("melpa"     . "https://melpa.org/packages/")))
 (package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 (require 'use-package)
 
 (defun my-inhibit-global-linum-mode ()
