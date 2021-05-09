@@ -1,5 +1,74 @@
 
 #+PRIORITIES: 3 2 1
+* Bugs
+** TODO Fix search in project shortcut to work in org-mode.
+* IN-PROGRESS Ruby
+** TODO Ruby
+*** REVIEW Solargraph
+** TODO Rails
+** rspec
+*** DONE run single
+*** REVIEW run scope
+
+* TODO Python
+** Snippets
+** Completions
+** Flymake
+** Rope
+
+* Org Mode
+** TODO org-projectile
+** TODO org-wunderlist
+** TODO org-journal
+** SPIKE rem + org rem
+** DEFERED org-caldav
+** DEFERED org-kanban
+** TODO org-agenda
+** TODO idle-org-agenda
+** DEFERED org-brain
+** DEFERED helm-org-rifle
+
+* Golang
+** DONE Gopls
+** DONE flycheck golangci
+** IN-PROGRESS completions via gopls
+** TODO change Goto Definition to be gopls
+** TODO run single test
+** TODO run tests in package
+** TODO ~go-fill-struct~
+** TODO ~gtags~
+
+* Generic IDE
+** REVIEW Indenting.
+** DEFERED linum-relative
+** DEFERED ggtags
+** DEFERED Evil mode for being a friendly pair programmer [[ spacemacs/core/core-keybindings.el ][spacemacs impl]]
+** DEFERED Spacemacs like shortcuts
+
+* DEFERED Elixir
+** ob-elixir
+** elixir-yasnippets
+
+* DEFERED Clojure
+** Rainbow Delim
+** TODO Cider
+** clojure-snippets
+** https://gitlab.com/nilenso/dotemacs/blob/master/init.el
+
+* Hydra
+- https://github.com/abo-abo/hydra/
+* Add langs
+** DEFERED ocaml
+** DEFERED lua
+** DEFERED Erlang
+** DEFERED haskell
+** DEFERED swift
+* Basic Support
+** TODO Octave
+** DEFERED prolog
+** TODO protobuf
+
+* Completed <2021-05-09 Sun>
 * DONE Literate https://github.com/joodie/emacs-literal-config/blob/master/emacs.org
 * DONE Tools
 ** DONE terraform
@@ -21,56 +90,6 @@
 ** DONE doom modeline
 ** DONE jsonnet
 ** DONE json
-** REVIEW Indenting.
-** DEFERED linum-relative
-** DEFERED ggtags
-** DEFERED Evil mode for being a friendly pair programmer [[ spacemacs/core/core-keybindings.el ][spacemacs impl]]
-** DEFERED Spacemacs like shortcuts
 * Org Mode
 ** DONE Org Bullets
 ** DONE plantuml, ditaa
-** TODO org-projectile
-** TODO org-wunderlist
-** TODO org-journal
-** SPIKE rem + org rem
-** DEFERED org-caldav
-** DEFERED org-kanban
-** TODO org-agenda
-** TODO idle-org-agenda
-** DEFERED org-brain
-** DEFERED helm-org-rifle
-* IN-PROGRESS Ruby
-** Ruby
-** TODO Rails
-* Golang
-** DONE Gopls
-** DONE flycheck golangci
-** IN-PROGRESS completions via gopls
-** TODO change Goto Definition to be gopls
-** TODO run single test
-** TODO run tests in package
-** TODO ~go-fill-struct~
-** TODO ~gtags~
-* Elixir
-** ob-elixir
-** elixir-yasnippets
-* Clojure
-** Rainbow Delim
-** TODO Cider
-** clojure-snippets
-
-** https://gitlab.com/nilenso/dotemacs/blob/master/init.el
-* Hydra
-- https://github.com/abo-abo/hydra/
-* Bugs
-** TODO Fix search in project shortcut to work in org-mode.
-* Add langs
-** DEFERED ocaml
-** DEFERED lua
-** DEFERED Erlang
-** DEFERED haskell
-** DEFERED swift
-* Basic Support
-** TODO Octave
-** DEFERED prolog
-** TODO protobuf

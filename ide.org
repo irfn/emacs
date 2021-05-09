@@ -158,8 +158,9 @@ only Emacs can save your soul"
  #+end_src
 ** Indispensable git companion
 #+BEGIN_SRC emacs-lisp
-(use-package magit
-  :ensure t)
+ (use-package magit
+   :ensure t
+   :bind (("H-g" . magit-status)))
 #+END_SRC
 
 ** M-x Alternate via ido
