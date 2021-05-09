@@ -124,12 +124,18 @@ only Emacs can save your soul"
 ** Projectile
 #+BEGIN_SRC emacs-lisp
 (use-package projectile
+  :diminish projectile-mode
   :ensure t
   :init
   :delight '(:eval (concat " " (projectile-project-name)))
-  (setq projectile-completion-system 'helm)
   :config
-  (projectile-mode))
+  (progn
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    (projectile-mode +1)
+    (setq projectile-completion-system 'helm)
+    (setq projectile-enable-caching t)
+    (setq projectile-indexing-method 'alien)
+    (add-to-list 'projectile-globally-ignored-files "node-modules")))
 
 (use-package helm-projectile
   :ensure t
@@ -158,9 +164,13 @@ only Emacs can save your soul"
  #+end_src
 ** Indispensable git companion
 #+BEGIN_SRC emacs-lisp
- (use-package magit
-   :ensure t
-   :bind (("H-g" . magit-status)))
+(use-package magit
+  :ensure t
+  :bind (("H-g" . magit-status)))
+
+(use-package git-messenger
+  :ensure t
+  :bind (("C-x g m" . git-messenger:popup-message)))
 #+END_SRC
 
 ** M-x Alternate via ido
