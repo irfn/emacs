@@ -123,6 +123,16 @@ Enabling export of Org to GH Flavored markdown
     (add-hook 'markdown-mode-hook 'emoji-cheat-sheet-plus-display-mode)))
 #+END_SRC
 
+* Agenda
+#+BEGIN_SRC emacs-lisp
+
+(setq org-agenda-files '("~/dev/brain/todo.org"
+                             "~/dev/brain/calendar.org"
+                             "~/dev/brain/dev.org"
+                             "~/dev/brain/research.org"))
+
+#+END_SRC
+
 * Provide this so that it may be required
 #+NAME: provide
 #+BEGIN_SRC emacs-lisp

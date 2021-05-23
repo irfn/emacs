@@ -60,6 +60,7 @@
 (tangle-file "ts.org")
 
 (push (expand-file-name "~/.emacs.d/elisp") load-path)
+(push (expand-file-name "~/.emacs.d/lib") load-path)
 (require 'config)
 (require 'ide)
 (require 'editor)
