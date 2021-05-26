@@ -21,7 +21,8 @@
 (use-package org
   :ensure t
   :config (progn
-            (setq org-todo-keywords (quote ((sequence "DISCUSS" "SPIKE" "ESTIMATE" "TODO" "IN-PROGRESS" "REVIEW" "DEFERED" "REDO" "|" "CANCELLED" "PUNTED" "DELEGATED" "DONE"))))
+            (setq org-todo-keywords (quote ((sequence "DISCUSS" "SPIKE" "ESTIMATE" "TODO" "IN-PROGRESS" "REVIEW" "DEFERED" "REDO" "|" "CANCELLED" "PUNTED" "DELEGATED" "DONE")
+                                            (sequence "IDEA" "RESEARCHING" "|" "DONE"))))
             (add-hook 'org-shiftup-final-hook 'windmove-up)
             (add-hook 'org-shiftleft-final-hook 'windmove-left)
             (add-hook 'org-shiftdown-final-hook 'windmove-down)
@@ -31,7 +32,27 @@
 		  (add-hook 'org-mode-hook 'my-inhibit-global-linum-mode)
 		  (add-hook 'org-mode-hook 'flyspell-mode)
 		  ;;(add-hook 'org-mode-hook 'auto-org-md-mode)
-          (add-hook 'org-mode-hook 'org-bullets-mode)))
+      (add-hook 'org-mode-hook 'org-bullets-mode))
+  :custom
+  (org-archive-location "::* Completed")
+  (org-startup-with-inline-images t)
+  (org-modules '(org-crypt
+                 org-habit
+                 org-mouse
+                 org-protocol
+                 org-tempo))
+  (org-tag-alist '(("@yak" . ?y)
+                   ("@research" . ?s)
+                   ("@reading" . ?r)
+                   ("@spike" . ?k)
+                   ("@home" . ?h)
+                   ("@errands" . ?e)
+                   ("@meeting" . ?m)
+                   ("@notes" . ?n)
+                   ("@writing" . ?w)
+                   ("todo" . ?0)
+                   ("@post" . ?p)))
+  )
 
 (use-package org-bullets
   :ensure t

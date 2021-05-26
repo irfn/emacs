@@ -126,11 +126,49 @@ Enabling export of Org to GH Flavored markdown
 * Agenda
 #+BEGIN_SRC emacs-lisp
 
-(setq org-agenda-files '("~/dev/brain/todo.org"
-                             "~/dev/brain/calendar.org"
-                             "~/dev/brain/dev.org"
-                             "~/dev/brain/research.org"))
+  (use-package org-agenda
+    :ensure nil
+    :custom
+    (org-agenda-skip-deadline-if-done t)
+    (org-agenda-dim-blocked-tasks t)
+    (org-agenda-inhibit-startup t)
+    (org-agenda-show-log t)
+    (org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled)
+    (org-agenda-skip-scheduled-if-done t)
+    (org-agenda-span 3)
+    (org-agenda-start-day "-1d")
+    (org-agenda-start-on-weekday nil)
+    (org-agenda-sticky nil)
+    (org-agenda-tags-column -100)
+    (org-agenda-time-grid '((daily today require-timed)))
+    (org-agenda-use-tag-inheritance t)
+    (org-columns-default-format "%14SCHEDULED %Effort{:} %1PRIORITY %TODO %50ITEM %TAGS")
+    (org-enforce-todo-dependencies t)
+    (org-habit-completed-glyph ?✓)
+    (org-habit-graph-column 80)
+    (org-habit-show-habits-only-for-today nil)
+    (org-habit-today-glyph ?‖)
+    (org-track-ordered-property-with-tag t))
 
+#+END_SRC
+
+* Pomodoro
+Attempt to be more productive with pomodoro
+#+BEGIN_SRC emacs-lisp
+  (use-package org-pomodoro
+    :ensure t
+    :defer 0.5
+    :custom
+    (alert-user-configuration (quote ((((:category . "org-pomodoro")) libnotify nil))))
+    (org-pomodoro-format " %s")
+    (org-pomodoro-audio-player "/usr/bin/afplay")
+    (org-pomodoro-finished-sound "/System/Library/Sounds/Hero.aiff")
+    (org-pomodoro-killed-sound "/System/Library/Sounds/Sosumi.aiff")
+    (org-pomodoro-long-break-sound "/System/Library/Sounds/Glass.aiff")
+    (org-pomodoro-overtime-sound "/System/Library/Sounds/Ping.aiff")
+    (org-pomodoro-short-break-sound "/System/Library/Sounds/Purr.aiff")
+    (org-pomodoro-start-sound "/System/Library/Sounds/Funk.aiff")
+    (org-pomodoro-start-sound-p t))
 #+END_SRC
 
 * Provide this so that it may be required
