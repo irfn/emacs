@@ -15,9 +15,49 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 
 * Org Based Presentations
 #+BEGIN_SRC emacs-lisp
-(use-package org-present
-  :ensure t
-  :bind (("<f8>" . org-present)))
+
+  (defun my/org-present-prepare-slide ()
+    (org-overview)
+    (org-show-entry)
+    (org-show-children))
+
+  (defun my/org-present-hook ()
+    (setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
+                                       (header-line (:height 3.5) variable-pitch)
+                                       (org-document-title (:height 1.5) org-document-title)
+                                       (org-code (:height 1.55) org-code)
+                                       (org-verbatim (:height 1.55) org-verbatim)
+                                       (org-block (:height 1.25) org-block)
+                                       (org-block-begin-line (:height 0.7) org-block)))
+    (org-display-inline-images)
+    (my/org-present-prepare-slide))
+
+  (defun my/org-present-quit-hook ()
+    (setq-local face-remapping-alist '((default variable-pitch default)))
+    (org-present-small)
+    (org-remove-inline-images)
+    )
+
+  (defun my/org-present-prev ()
+    (interactive)
+    (org-present-prev)
+    (my/org-present-prepare-slide))
+
+  (defun my/org-present-next ()
+    (interactive)
+    (org-present-next)
+    (org-redisplay-inline-images)
+    (my/org-present-prepare-slide))
+
+  (use-package org-present
+    :bind (("H-q" . toggle-truncate-lines)
+           ("<f8>" . org-present)
+           ("<f5>" . org-redisplay-inline-images)
+           ("C-c C-j" . my/org-present-next)
+           ("C-c C-k" . my/org-present-prev))
+    :hook ((org-present-mode . my/org-present-hook)
+           (org-present-mode-quit . my/org-present-quit-hook)))
+
 #+END_SRC
 
 * Org Babel
@@ -47,6 +87,30 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
     (add-hook 'org-mode-hook 'ob-do-load-langs)
     ;; Fix redisplay of inline images after a code block evaluation.
     (add-hook 'org-babel-after-execute-hook 'ob-fix-inline-images)))
+
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(defun individual-visibility-source-blocks ()
+  "Fold some blocks in the current buffer."
+  (interactive)
+  (org-show-block-all)
+  (org-block-map
+   (lambda ()
+     (let ((case-fold-search t))
+       (when (and
+              (save-excursion
+                (beginning-of-line 1)
+                (looking-at org-block-regexp))
+              (cl-assoc
+               ':hidden
+               (cl-third
+                (org-babel-get-src-block-info))))
+         (org-hide-block-toggle))))))
+
+(add-hook
+ 'org-mode-hook
+ (function individual-visibility-source-blocks))
 #+END_SRC
 * Org Export
 #+begin_src emacs-lisp

@@ -11,6 +11,8 @@ Add basic Dockerfile highlighting support
   :ensure t)
 #+END_SRC
 
+#+RESULTS:
+
 #+BEGIN_SRC emacs-lisp
 (use-package docker-compose-mode
   :ensure t)
@@ -45,12 +47,21 @@ Add Docker operations support
   :ensure t
   :defer t)
 #+END_SRC
+
 ** Telegram
 #+NAME: telegram
 #+BEGIN_SRC emacs-lisp
 (use-package telega
   :ensure t
   :defer t)
+#+END_SRC
+
+** Lua
+#+NAME: Lua
+#+BEGIN_SRC emacs-lisp
+(use-package lua-mode
+   :ensure t
+   :defer t)
 #+END_SRC
 
 * Provide this so that it may be required

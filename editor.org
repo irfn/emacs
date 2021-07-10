@@ -62,21 +62,24 @@
 
 * Themes
 #+BEGIN_SRC emacs-lisp
-;;(use-package suscolors-theme
-;;  :ensure t)
+    ;;(use-package suscolors-theme
+    ;;  :ensure t)
 
-;;(use-package gruvbox-theme
-;;  :ensure t)
+    (use-package gruvbox-theme
+      :ensure t)
 
-;;(use-package inkpot-theme
-;;  :ensure t)
+    ;;(use-package inkpot-theme
+    ;;  :ensure t)
 
-;;(use-package dracula-theme
-;;  :ensure t)
+    ;;(use-package dracula-theme
+    ;;  :ensure t)
 
-(use-package srcery-theme
-  :ensure t)
-(load-theme 'srcery)
+    (use-package srcery-theme
+      :ensure t)
+    (use-package cyberpunk-theme
+      :ensure t)
+
+    (load-theme 'cyberpunk)
 #+END_SRC
 * Misc
 ** Yaml
