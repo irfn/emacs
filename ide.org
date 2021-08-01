@@ -233,6 +233,7 @@ only Emacs can save your soul"
             (setq company-idle-delay 0)
             (setq company-minimum-prefix-length 1)
             (setq company-tooltip-align-annotations t)
+            (setq lsp-completion-provider :capf)
             )
   :hook (prog-mode . company-mode))
 
@@ -240,25 +241,21 @@ only Emacs can save your soul"
 
 ** LSP
 #+BEGIN_SRC emacs-lisp
-(use-package lsp-mode
-  :ensure t
-  ;; :custom (lsp-gopls-server-args '("-debug" "127.0.0.1:0"))
-  :commands (lsp lsp-deferred)
-  :config (require 'lsp-clients))
+  (use-package lsp-mode
+    :ensure t
+    ;; :custom (lsp-gopls-server-args '("-debug" "127.0.0.1:0"))
+    :commands (lsp lsp-deferred)
+    :config (require 'lsp-clients))
 
 
-(use-package lsp-ui
-  :ensure t
-  :commands lsp-ui-mode
-  :config (progn
-            ;; disable inline documentation
-            (setq lsp-ui-sideline-enable nil)
-            ;; disable showing docs on hover at the top of the window
-            (setq lsp-ui-doc-enable nil)))
-
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp)
+  (use-package lsp-ui
+    :ensure t
+    :commands lsp-ui-mode
+    :config (progn
+              ;; disable inline documentation
+              (setq lsp-ui-sideline-enable nil)
+              ;; disable showing docs on hover at the top of the window
+              (setq lsp-ui-doc-enable nil)))
 
 
 #+END_SRC
@@ -268,9 +265,7 @@ only Emacs can save your soul"
 #+BEGIN_SRC emacs-lisp
 (use-package flycheck
   :ensure t
-  :hook (
-  (prog-mode . flycheck-mode)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))))
+  :init (global-flycheck-mode))
 
 (use-package hi-lock
   :bind (("C-RET h l" . highlight-lines-matching-regexp)

@@ -62,24 +62,44 @@
 
 * Themes
 #+BEGIN_SRC emacs-lisp
-    ;;(use-package suscolors-theme
-    ;;  :ensure t)
+  ;;(use-package suscolors-theme
+  ;;  :ensure t)
 
-    (use-package gruvbox-theme
-      :ensure t)
+  (use-package gruvbox-theme
+    :ensure t)
 
-    ;;(use-package inkpot-theme
-    ;;  :ensure t)
+  (use-package inkpot-theme
+    :ensure t)
 
-    ;;(use-package dracula-theme
-    ;;  :ensure t)
+  ;;(use-package dracula-theme
+  ;;  :ensure t)
 
-    (use-package srcery-theme
-      :ensure t)
-    (use-package cyberpunk-theme
-      :ensure t)
+  (use-package srcery-theme
+    :ensure t)
+  (use-package cyberpunk-theme
+    :ensure t)
+  (use-package poet-theme
+    :ensure t)
 
-    (load-theme 'cyberpunk)
+;; Taken from Simon Shine's answer at https://stackoverflow.com/questions/9900232/changing-color-themes-emacs-24-order-matters
+  (setq my-themes '(cyberpunk poet-dark cyberpunk inkpot gruvbox-dark-hard poet))
+
+  (setq my-cur-theme nil)
+  (defun cycle-my-theme ()
+    "Cycle through a list of themes, my-themes"
+    (interactive)
+    (when my-cur-theme
+      (disable-theme my-cur-theme)
+      (setq my-themes (append my-themes (list my-cur-theme))))
+    (setq my-cur-theme (pop my-themes))
+    (load-theme my-cur-theme t))
+
+;; Switch to the first theme in the list above
+   (cycle-my-theme)
+
+;; Bind this to C-t
+  (global-set-key (kbd "C-H-t") 'cycle-my-theme)
+
 #+END_SRC
 * Misc
 ** Yaml
