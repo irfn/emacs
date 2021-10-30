@@ -1,4 +1,4 @@
-#+TITLE:     Docs
+/#+TITLE:     Docs
 #+AUTHOR:    Irfan Shah
 
 * Org Mode
@@ -8,6 +8,15 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 
 (setq org-export-with-sub-superscripts nil)
 (global-set-key (kbd "C-c C-<return>") 'remember)
+
+
+(defun efs/org-mode-visual-fill ()
+  (setq visual-fill-column-width 200
+        visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
+
+(use-package visual-fill-column
+  :hook (org-mode . efs/org-mode-visual-fill))
 #+END_SRC
 
 #+RESULTS:
@@ -16,77 +25,86 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 * Org Based Presentations
 #+BEGIN_SRC emacs-lisp
 
-  (defun my/org-present-prepare-slide ()
-    (org-overview)
-    (org-show-entry)
-    (org-show-children))
+    (defun my/org-present-prepare-slide ()
+      (org-overview)
+      (org-show-entry)
+      (org-show-children))
 
-  (defun my/org-present-hook ()
-    (setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
-                                       (header-line (:height 3.5) variable-pitch)
-                                       (org-document-title (:height 1.5) org-document-title)
-                                       (org-code (:height 1.55) org-code)
-                                       (org-verbatim (:height 1.55) org-verbatim)
-                                       (org-block (:height 1.25) org-block)
-                                       (org-block-begin-line (:height 0.7) org-block)))
-    (org-display-inline-images)
-    (my/org-present-prepare-slide))
+    (defun my/org-present-hook ()
+      ;; (setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
+      ;;                                    (header-line (:height 3.5) variable-pitch)
+      ;;                                    (org-document-title (:height 1.5) org-document-title)
+      ;;                                    (org-code (:height 1.55) org-code)
+      ;;                                    (org-verbatim (:height 1.55) org-verbatim)
+      ;;                                    (org-block (:height 1.25) org-block)
+      ;;                                    (org-block-begin-line (:height 0.7) org-block)))
+      (org-display-inline-images)
+      (my/org-present-prepare-slide))
 
-  (defun my/org-present-quit-hook ()
-    (setq-local face-remapping-alist '((default variable-pitch default)))
-    (org-present-small)
-    (org-remove-inline-images)
-    )
+    (defun my/org-present-quit-hook ()
+  ;;    (setq-local face-remapping-alist '((default variable-pitch default)))
+      (org-present-small)
+      (org-remove-inline-images)
+      )
 
-  (defun my/org-present-prev ()
-    (interactive)
-    (org-present-prev)
-    (my/org-present-prepare-slide))
+    (defun my/org-present-prev ()
+      (interactive)
+      (org-present-prev)
+      (my/org-present-prepare-slide))
 
-  (defun my/org-present-next ()
-    (interactive)
-    (org-present-next)
-    (org-redisplay-inline-images)
-    (my/org-present-prepare-slide))
+    (defun my/org-present-next ()
+      (interactive)
+      (org-present-next)
+      (org-redisplay-inline-images)
+      (my/org-present-prepare-slide))
 
-  (use-package org-present
-    :bind (("H-q" . toggle-truncate-lines)
-           ("<f8>" . org-present)
-           ("<f5>" . org-redisplay-inline-images)
-           ("C-c C-j" . my/org-present-next)
-           ("C-c C-k" . my/org-present-prev))
-    :hook ((org-present-mode . my/org-present-hook)
-           (org-present-mode-quit . my/org-present-quit-hook)))
+    (use-package org-present
+      :bind (("H-q" . toggle-truncate-lines)
+             ("<f8>" . org-present)
+             ("<f9>" . org-present-quit)
+             ("<f5>" . org-redisplay-inline-images)
+             ("C-c C-j" . my/org-present-next)
+             ("C-c C-k" . my/org-present-prev))
+      :hook ((org-present-mode . my/org-present-hook)
+             (org-present-mode-quit . my/org-present-quit-hook)))
 
 #+END_SRC
 
 * Org Babel
 
 #+BEGIN_SRC emacs-lisp
-(defun ob-fix-inline-images ()
-  (when org-inline-image-overlays
-    (org-redisplay-inline-images)))
+  (defun ob-fix-inline-images ()
+    (when org-inline-image-overlays
+      (org-redisplay-inline-images)))
 
-(defun ob-do-load-langs ()
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((ruby . t)
-     (ditaa . t)
-     (plantuml . t)
-     (emacs-lisp . t)
-     (rust . t))))
+  (defun ob-do-load-langs ()
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((ruby . t)
+       (ditaa . t)
+       (plantuml . t)
+       (emacs-lisp . t)
+       (shell . t)
+       (rust . t))))
 
-(defun ob-confirm-babel-evaluate (lang body);;
-  (not (member lang '("python" "go" "ruby" "clojure" "sh" "ditaa" "plantuml" "emacs-lisp", "rust"))))
+  (defun ob-confirm-babel-evaluate (lang body);;
+    (not (member lang '("python" "shell" "bash" "go" "ruby" "clojure" "sh" "ditaa" "plantuml" "emacs-lisp", "rust"))))
 
-(use-package ob
-  :defer t
-  :config (setq org-confirm-babel-evaluate 'ob-confirm-babel-evaluate)
-  :init
-  (progn
-    (add-hook 'org-mode-hook 'ob-do-load-langs)
-    ;; Fix redisplay of inline images after a code block evaluation.
-    (add-hook 'org-babel-after-execute-hook 'ob-fix-inline-images)))
+  (use-package ob
+    :defer t
+    :config (setq org-confirm-babel-evaluate 'ob-confirm-babel-evaluate)
+    :init
+    (progn
+      (add-hook 'org-mode-hook 'ob-do-load-langs)
+      ;; Fix redisplay of inline images after a code block evaluation.
+      (add-hook 'org-babel-after-execute-hook 'ob-fix-inline-images)))
+
+  (defun org-babel-execute:passthrough (body params)
+    body)
+
+(defalias 'org-babel-execute:json 'org-babel-execute:passthrough)
+(defalias 'org-babel-execute:yaml 'org-babel-execute:passthrough)
+(defalias 'org-babel-execute:csv 'org-babel-execute:passthrough)
 
 #+END_SRC
 
@@ -116,6 +134,13 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 #+begin_src emacs-lisp
 (use-package ox-odt
   :ensure t)
+
+(use-package ox-mediawiki
+  :ensure t)
+
+(use-package ox-jira
+  :ensure t)
+(require 'ox-confluence)
 #+end_src
 
 #+RESULTS:
@@ -126,8 +151,7 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
   :ensure t
   :init
   (progn
-  (setq org-plantuml-jar-path
-	(expand-file-name "/usr/local/Cellar/plantuml/1.2019.12/libexec/plantuml.jar"))
+  (setq org-plantuml-jar-path "/opt/homebrew/Cellar/plantuml/1.2021.7/libexec/plantuml.jar")
   (setq plantuml-default-exec-mode 'jar))
 )
 
@@ -138,12 +162,12 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 * Calendar
 
 #+BEGIN_SRC emacs-lisp
-;;(use-package org-gcal
-;;  :ensure t
-;;  :init (setq org-gcal-client-id (getenv "ORG_GCAL_CLIENTID")
-;;              org-gcal-client-secret (getenv "ORG_GCAL_CLIENTSECRET")
-;;              org-gcal-file-alist '(((getenv "ORG_GCAL_EMAIL") . (getenv "ORG_GCAL_ORG_PATH"))))
-;;)
+  ;;(use-package org-gcal
+  ;;  :ensure t
+  ;;  :init (setq org-gcal-client-id (getenv "ORG_GCAL_CLIENTID")
+  ;;              org-gcal-client-secret (getenv "ORG_GCAL_CLIENTSECRET")
+  ;;              org-gcal-file-alist '(((getenv "ORG_GCAL_EMAIL") . (getenv "ORG_GCAL_ORG_PATH"))))
+  ;;)
 #+END_SRC
 
 * Markdown
@@ -235,6 +259,82 @@ Attempt to be more productive with pomodoro
     (org-pomodoro-start-sound-p t))
 #+END_SRC
 
+* Roam
+#+BEGIN_SRC emacs-lisp
+(use-package org-roam
+  :hook
+  (after-init . org-roam-mode)
+  :custom
+  (org-roam-directory "~/dev/brain/Roam/")
+  (org-roam-completion-everywhere t)
+  (org-roam-completion-system 'default)
+  (org-roam-capture-templates
+    '(("d" "default" plain
+       #'org-roam-capture--get-point
+       "%?"
+       :file-name "%<%Y%m%d%H%M%S>-${slug}"
+       :head "#+title: ${title}\n"
+       :unnarrowed t)
+      ("ll" "link note" plain
+       #'org-roam-capture--get-point
+       "* %^{Link}"
+       :file-name "Inbox"
+       :olp ("Links")
+       :unnarrowed t
+       :immediate-finish)
+      ("lt" "link task" entry
+       #'org-roam-capture--get-point
+       "* TODO %^{Link}"
+       :file-name "Inbox"
+       :olp ("Tasks")
+       :unnarrowed t
+       :immediate-finish)))
+  (org-roam-dailies-directory "Journal/")
+  (org-roam-dailies-capture-templates
+    '(("d" "default" entry
+       #'org-roam-capture--get-point
+       "* %?"
+       :file-name "Journal/%<%Y-%m-%d>"
+       :head "#+title: %<%Y-%m-%d %a>\n\n[[roam:%<%Y-%B>]]\n\n")
+      ("t" "Task" entry
+       #'org-roam-capture--get-point
+       "* TODO %?\n  %U\n  %a\n  %i"
+       :file-name "Journal/%<%Y-%m-%d>"
+       :olp ("Tasks")
+       :empty-lines 1
+       :head "#+title: %<%Y-%m-%d %a>\n\n[[roam:%<%Y-%B>]]\n\n")
+      ("j" "journal" entry
+       #'org-roam-capture--get-point
+       "* %<%I:%M %p> - Journal  :journal:\n\n%?\n\n"
+       :file-name "Journal/%<%Y-%m-%d>"
+       :olp ("Log")
+       :head "#+title: %<%Y-%m-%d %a>\n\n[[roam:%<%Y-%B>]]\n\n")
+      ("l" "log entry" entry
+       #'org-roam-capture--get-point
+       "* %<%I:%M %p> - %?"
+       :file-name "Journal/%<%Y-%m-%d>"
+       :olp ("Log")
+       :head "#+title: %<%Y-%m-%d %a>\n\n[[roam:%<%Y-%B>]]\n\n")
+      ("m" "meeting" entry
+       #'org-roam-capture--get-point
+       "* %<%I:%M %p> - %^{Meeting Title}  :meetings:\n\n%?\n\n"
+       :file-name "Journal/%<%Y-%m-%d>"
+       :olp ("Log")
+       :head "#+title: %<%Y-%m-%d %a>\n\n[[roam:%<%Y-%B>]]\n\n")))
+  :bind (:map org-roam-mode-map
+          (("C-c n l"   . org-roam)
+           ("C-c n f"   . org-roam-find-file)
+           ("C-c n d"   . org-roam-dailies-find-date)
+           ("C-c n c"   . org-roam-dailies-capture-today)
+           ("C-c n C r" . org-roam-dailies-capture-tomorrow)
+           ("C-c n t"   . org-roam-dailies-find-today)
+           ("C-c n y"   . org-roam-dailies-find-yesterday)
+           ("C-c n r"   . org-roam-dailies-find-tomorrow)
+           ("C-c n g"   . org-roam-graph))
+         :map org-mode-map
+         (("C-c n i" . org-roam-insert))
+         (("C-c n I" . org-roam-insert-immediate))))
+#+END_SRC
 * Provide this so that it may be required
 #+NAME: provide
 #+BEGIN_SRC emacs-lisp

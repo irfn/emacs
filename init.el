@@ -19,7 +19,7 @@
 	    :append :local))
 
 (use-package org
-  :ensure t
+  :ensure org-plus-contrib
   :config (progn
             (setq org-todo-keywords (quote ((sequence "DISCUSS" "SPIKE" "ESTIMATE" "TODO" "IN-PROGRESS" "REVIEW" "DEFERED" "REDO" "|" "CANCELLED" "PUNTED" "DELEGATED" "DONE")
                                             (sequence "IDEA" "RESEARCHING" "|" "DONE"))))

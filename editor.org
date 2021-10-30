@@ -82,7 +82,7 @@
     :ensure t)
 
 ;; Taken from Simon Shine's answer at https://stackoverflow.com/questions/9900232/changing-color-themes-emacs-24-order-matters
-  (setq my-themes '(cyberpunk poet-dark cyberpunk inkpot gruvbox-dark-hard poet))
+  (setq my-themes '(poet-dark cyberpunk inkpot gruvbox-dark-hard poet srcery))
 
   (setq my-cur-theme nil)
   (defun cycle-my-theme ()
