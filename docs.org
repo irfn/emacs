@@ -85,6 +85,7 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
        (plantuml . t)
        (emacs-lisp . t)
        (shell . t)
+       (python . t)
        (rust . t))))
 
   (defun ob-confirm-babel-evaluate (lang body);;
@@ -99,13 +100,13 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
       ;; Fix redisplay of inline images after a code block evaluation.
       (add-hook 'org-babel-after-execute-hook 'ob-fix-inline-images)))
 
+
   (defun org-babel-execute:passthrough (body params)
     body)
 
-(defalias 'org-babel-execute:json 'org-babel-execute:passthrough)
-(defalias 'org-babel-execute:yaml 'org-babel-execute:passthrough)
-(defalias 'org-babel-execute:csv 'org-babel-execute:passthrough)
-
+  (defalias 'org-babel-execute:json 'org-babel-execute:passthrough)
+  (defalias 'org-babel-execute:yaml 'org-babel-execute:passthrough)
+  (defalias 'org-babel-execute:csv 'org-babel-execute:passthrough)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
@@ -141,6 +142,9 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
 (use-package ox-jira
   :ensure t)
 (require 'ox-confluence)
+
+(use-package htmlize
+  :ensure t)
 #+end_src
 
 #+RESULTS:
@@ -151,7 +155,8 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
   :ensure t
   :init
   (progn
-  (setq org-plantuml-jar-path "/opt/homebrew/Cellar/plantuml/1.2021.7/libexec/plantuml.jar")
+  (setq org-plantuml-jar-path
+	(expand-file-name "/usr/local/Cellar/plantuml/1.2021.10/libexec/plantuml.jar"))
   (setq plantuml-default-exec-mode 'jar))
 )
 
