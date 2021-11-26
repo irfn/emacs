@@ -1,4 +1,4 @@
-/#+TITLE:     Docs
+#+TITLE:     Docs
 #+AUTHOR:    Irfan Shah
 
 * Org Mode
@@ -155,8 +155,7 @@ Core of the Org mode is setup in ~init.el~ since org is the foundation for liter
   :ensure t
   :init
   (progn
-  (setq org-plantuml-jar-path
-	(expand-file-name "/usr/local/Cellar/plantuml/1.2021.10/libexec/plantuml.jar"))
+  (setq org-plantuml-jar-path (expand-file-name (getenv "PLANTUML_JAR")))
   (setq plantuml-default-exec-mode 'jar))
 )
 

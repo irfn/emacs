@@ -1,0 +1,33 @@
+#+TITLE:     Email
+#+AUTHOR:    Irfan Shah
+
+* Mu4e email
+#+BEGIN_SRC emacs-lisp
+(setq mu4e-path (getenv "MU4E"))
+(use-package mu4e
+   :load-path mu4e-path)
+
+(require 'smtpmail)
+
+(setq mu4e-mu-binary (executable-find "mu"))
+(setq mu4e-maildir "~/Mail")
+(setq mu4e-get-mail-command (concat "env OP_SESSION_my=$(op signin --raw)" (executable-find "mbsync") " -a"))
+(setq mu4e-update-interval 300)
+(setq mu4e-attachment-dir "~/Downloads")
+(setq mu4e-change-filenames-when-moving t)
+
+(setq mu4e-user-mail-address-list '("irfan@fractals.in"))
+
+;; (setq   mu4e-maildir-shortcuts
+;;         '(("/icloud/INBOX" . ?i)
+;;           ("/icloud/Sent Messages" . ?I)
+;;           ("/gmail/INBOX" . ?g)
+;;           ("/gmail/[Gmail]/Sent Mail" . ?G)
+
+#+END_SRC
+
+* Provide this so that it may be required
+#+NAME: provide
+#+BEGIN_SRC emacs-lisp
+(provide 'email)
+#+END_SRC

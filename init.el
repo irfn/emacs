@@ -79,6 +79,7 @@
 (tangle-file "sml.org")
 (tangle-file "ruby.org")
 (tangle-file "ts.org")
+(tangle-file "email.org")
 
 (push (expand-file-name "~/.emacs.d/elisp") load-path)
 (push (expand-file-name "~/.emacs.d/lib") load-path)
@@ -97,7 +98,7 @@
 (require 'haskell)
 (require 'sml)
 (require 'ruby)
-
+(require 'email)
 (when (require 'time-date nil t)
   (message "Emacs startup time: %d seconds."
            (time-to-seconds (time-since emacs-load-start-time))))

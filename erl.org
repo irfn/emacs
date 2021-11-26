@@ -17,7 +17,7 @@ needed
 
 
 #+BEGIN_SRC emacs-lisp
-(setq load-path (cons  "/usr/local/Cellar/erlang/23.1.1/lib/erlang/lib/tools-3.4.1/emacs/"
+(setq load-path (cons  (getenv "ERLANG_EMACS_TOOLS")
       load-path))
 (require 'erlang-start)
 
