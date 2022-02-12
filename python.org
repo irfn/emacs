@@ -21,7 +21,7 @@
 
       (setq elpy-rpc-backend "jedi")
       ;;(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
-      (setq flycheck-python-flake8-executable "/usr/local/bin/flake8")
+      (setq flycheck-python-flake8-executable (executable-find "flake8"))
       :bind (:map elpy-mode-map
           ("M-." . elpy-goto-definition)
           ("M-," . pop-tag-mark)))
@@ -69,10 +69,10 @@
   (add-hook 'projectile-after-switch-project-hook 'pyenv-activate-current-project)
 
   (use-package lsp-pyright
-    :ensure t
-    :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))))  ; or lsp-deferred
+  :hook (python-mode . (lambda () (require 'lsp-pyright)))
+  :init (when (executable-find "python3")
+          (setq lsp-pyright-python-executable-cmd "python3")))
+
   (provide 'lang-python)
   ;;; base-python.el ends here
 
