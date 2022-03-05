@@ -1,0 +1,8 @@
+#+title:     Scheme Mode
+#+author:    Irfan Shah
+
+#+begin_src emacs-lisp :tangle yes
+  (custom-set-variables '(scheme-program-name "petite"))
+  (setq scheme-program-name "petite")
+  (setq auto-mode-alist (cons '("\\.ss" . scheme-mode) auto-mode-alist))
+#+end_src

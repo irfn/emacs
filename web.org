@@ -1,0 +1,18 @@
+#+title:     Web
+#+author:    Irfan Shah
+
+* Web
+ #+BEGIN_SRC emacs-lisp
+      (use-package js2-mode
+        :ensure t)
+ 
+      (use-package rjsx-mode
+        :ensure t
+        :mode "\.tsx")
+ #+END_SRC
+
+* Provide this so that it may be required
+#+NAME: provide
+#+BEGIN_SRC emacs-lisp
+(provide 'web)
+#+END_SRC

@@ -6,6 +6,9 @@
 Tide initialization
 
 #+BEGIN_SRC emacs-lisp
+(use-package typescript-mode
+  :ensure t)
+
 (use-package tide
   :ensure t
   :after (typescript-mode company flycheck)
@@ -15,4 +18,10 @@ Tide initialization
   (tide-start-server-if-required)
   (eldoc-mode)
   ))
+#+END_SRC
+
+* Provide this so that it may be required
+#+NAME: provide
+#+BEGIN_SRC emacs-lisp
+(provide 'ts)
 #+END_SRC
