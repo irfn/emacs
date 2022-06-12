@@ -5,24 +5,39 @@
 #+Name: dump
 #+BEGIN_SRC emacs-lisp
 
-;;rust-mode
+  ;;rust-mode
 
-(use-package rust-mode
-  :ensure t)
+  (use-package rust-mode
+    :ensure t)
 
-(use-package flycheck-rust
-  :ensure t
-  :config (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+  (use-package flycheck-rust
+    :ensure t
+    :config (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
-(use-package cargo
-  :ensure t
-  :diminish cargo-minor-mode
-  :hook (rust-mode . cargo-minor-mode))
+  (use-package cargo
+    :ensure t
+    :diminish cargo-minor-mode
+    :hook (rust-mode . cargo-minor-mode))
 
-;;(use-package racer
-;;  :ensure t)
+  (use-package rustic
+    :ensure
+    :bind (:map rustic-mode-map
+                ("M-j" . lsp-ui-imenu)
+                ("M-?" . lsp-find-references)
+                ("C-c C-c l" . flycheck-list-errors)
+                ("C-c C-c a" . lsp-execute-code-action)
+                ("C-c C-c r" . lsp-rename)
+                ("C-c C-c q" . lsp-workspace-restart)
+                ("C-c C-c Q" . lsp-workspace-shutdown)
+                ("C-c C-c s" . lsp-rust-analyzer-status))
+    :config
+  ;; comment to disable rustfmt on save
+  (setq rustic-format-on-save t))
 
-;;(add-hook 'rust-mode-hook 'racer-mode)
+  ;;(use-package racer
+  ;;  :ensure t)
+
+  ;;(add-hook 'rust-mode-hook 'racer-mode)
 #+END_SRC
 * babel support
 #+BEGIN_SRC emacs-lisp

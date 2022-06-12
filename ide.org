@@ -241,21 +241,34 @@ only Emacs can save your soul"
 
 ** LSP
 #+BEGIN_SRC emacs-lisp
-  (use-package lsp-mode
-    :ensure t
-    ;; :custom (lsp-gopls-server-args '("-debug" "127.0.0.1:0"))
-    :commands (lsp lsp-deferred)
-    :config (require 'lsp-clients))
+(use-package lsp-mode
+  :ensure t
+  ;; :custom (lsp-gopls-server-args '("-debug" "127.0.0.1:0"))
+  :commands (lsp lsp-deferred)
+  :custom (progn
+  (require 'lsp-clients)
+  (lsp-rust-analyzer-cargo-watch-command "clippy")
+  (lsp-eldoc-render-all t)
+  (lsp-idle-delay 0.6)
+  ;; enable / disable the hints as you prefer:
+  ;;todo: move to rust.org
+  (lsp-rust-analyzer-server-display-inlay-hints t)
+  (lsp-rust-analyzer-display-lifetime-elision-hints-enable "skip_trivial")
+  (lsp-rust-analyzer-display-chaining-hints t)
 
+  (lsp-rust-analyzer-display-lifetime-elision-hints-use-parameter-names nil)
+  (lsp-rust-analyzer-display-closure-return-type-hints t)
+  (lsp-rust-analyzer-display-parameter-hints nil)
+  (lsp-rust-analyzer-display-reborrow-hints nil)
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)))
 
-  (use-package lsp-ui
-    :ensure t
-    :commands lsp-ui-mode
-    :config (progn
-              ;; disable inline documentation
-              (setq lsp-ui-sideline-enable nil)
-              ;; disable showing docs on hover at the top of the window
-              (setq lsp-ui-doc-enable nil)))
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode
+  :custom (progn
+  (setq lsp-ui-peek-always-show f)
+  (setq lsp-ui-sideline-show-hover t)
+  (set1 lsp-ui-doc-enable nil)))
 
 
 #+END_SRC
